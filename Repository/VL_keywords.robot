@@ -155,6 +155,8 @@ Select Fixtures with Autostake
     Should Be Equal As Integers         ${count}    10
     Log to Console      Match Table Count = ${count}
 
+    Screenshot      BetLion_Virtual League Landing Validations-{index}.png
+
     # Competition Selector - V-EPL
     Click Element                       ${VLeagueCompSelectorDD}
     Sleep       1
@@ -166,13 +168,40 @@ Select Fixtures with Autostake
     Click Element                       ${VLeagueMatchesTab}
     Element Should Be Enabled           ${VLeagueMatchesTab}
 
+    # Betslip Inactive
+    Element Should Be Visible           ${VLeagueBetslipInactive}
+    # Bonus Progress = 0
+    Element Should Be Visible           ${VLeagueBonusProgress0}
+    # Bonus = 0%
+    Element Should Be Visible           ${VLeagueBonus%_0}
+
     #Select Fixtures
     # Match #1
-    Wait Until Element Is Visible       ${VLeagueMatchBet1Inactive}                10 seconds
-    Mouse Over                          ${VLeagueMatchBet1Inactive}
-    Click Element                       ${VLeagueMatchBet1Inactive}
+    Wait Until Element Is Visible       ${VLeagueMatchBet1Inactive_1}                10 seconds
+    Mouse Over                          ${VLeagueMatchBet1Inactive_1}
+    Click Element                       ${VLeagueMatchBet1Inactive_1}
+
+    # Betslip Active = 1
+    Element Should Be Visible           ${VLeagueBetslipActive}
+    # Bonus Progress = 1
+    Element Should Be Visible           ${VLeagueBonusProgress1}
+    # Bonus % = 1
+    Element Should Be Visible           ${VLeagueBonus%_1}
+
+    Screenshot      BetLion_VLeague 1 Fixture Bet Selected-{index}.png
 
     # Match #2
-    Wait Until Element Is Visible       ${VLeagueMatchBet1Inactive}                10 seconds
-    Mouse Over                          ${VLeagueMatchBet1Inactive}
-    Click Element                       ${VLeagueMatchBet1Inactive}
+    Wait Until Element Is Visible       ${VLeagueMatchBet2Inactive_X}                10 seconds
+    Mouse Over                          ${VLeagueMatchBet2Inactive_X}
+    Click Element                       ${VLeagueMatchBet2Inactive_X}
+
+    #*** UPDATE -   VALIDATE FOR 2ND BET
+
+    # Betslip Active = 1
+    Element Should Be Visible           ${VLeagueBetslipActive}
+    # Bonus Progress = 1
+    Element Should Be Visible           ${VLeagueBonusProgress1}
+    # Bonus % = 1
+    Element Should Be Visible           ${VLeagueBonus%_1}
+
+    Screenshot      BetLion_VLeague 1 Fixture Bet Selected-{index}.png
