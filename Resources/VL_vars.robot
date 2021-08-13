@@ -31,7 +31,7 @@ ${VLeagueCompVLaLiga}           xpath://div[@class='competition-selector__option
 ${VLeagueCompVAfricanNations}   xpath://div[@class='competition-selector__options-wrapper competition-selector__options-wrapper--active']/div[text()='V-African Nations']
 ${VLeagueCompVWorldLeague}      xpath://div[@class='competition-selector__options-wrapper competition-selector__options-wrapper--active']/div[text()='V-World League']
 ${VLeagueMatchesTab}            xpath://li[@class='menu__item']//a[@class='active'][text()='Matches']
-${VLeague0Selected}             xpath://div[@class='bonus-bar']//span
+${VLeagueSelected}              xpath://div[@class='bonus-bar']//span
 ${VLeague0Bonus}                xpath://div[@class='bonus-bar']//div[@class='bonus-bar__current-multiplier--0__number']
 ${VLeagueLiveTab}               xpath://a[text()='Live']
 ${VLeagueResultsTab}            xpath://a[text()='Results']
@@ -43,19 +43,52 @@ ${VLeague0U25MenuItem}          xpath://div[@class='market-menu']//div[@class='m
 ${VLeagueDCMenuItem}            xpath://div[@class='market-menu']//div[@class='market-menu__item'][text()='DC']
 ${VLeagueMatchTableRows}        xpath://div[@class='match-table__row']
 ${VLeagueBetslipInactive}       xpath://div[@class='menu__item-betslip menu__item-betslip--inactive']
-${VLeagueBetslipActive}         xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='1']
+${VLeagueBetslipActive1}        xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='1']
+${VLeagueBetslipActive2}        xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='2']
+${VLeagueBetslipActive3}        xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='3']
+${VLeagueBetslipActive4}        xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='4']
+${VLeagueBetslipActive5}        xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='5']
+${VLeagueBetslipActive6}        xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='6']
+${VLeagueBetslipActive7}        xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='7']
+${VLeagueBetslipActive8}        xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='8']
+${VLeagueBetslipActive9}        xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='9']
+${VLeagueBetslipActive10}       xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='10']
 ${VLeagueBonusProgress0}        xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class][1][text()='1']
 ${VLeagueBonusProgress1}        xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__1']
-
-
-
-
-
-
-
-
+${VLeagueBonusProgress2}        xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__2']
+${VLeagueBonusProgress3}        xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__3']
+${VLeagueBonusProgress4}        xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__4']
+${VLeagueBonusProgress5}        xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__5']
+${VLeagueBonusProgress6}        xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__6']
+${VLeagueBonusProgress7}        xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__7']
+${VLeagueBonusProgress8}        xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__8']
+${VLeagueBonusProgress9}        xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__9']
+${VLeagueBonusProgress10}       xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__10']
 ${VLeagueBonus%_0}              xpath://div[@class='bonus-bar__current-multiplier--0']
 ${VLeagueBonus%_1}              xpath://div[@class='bonus-bar__current-multiplier--1']
+${VLeagueBonus%_2}              xpath://div[@class='bonus-bar__current-multiplier--2']
+${VLeagueBonus%_3}              xpath://div[@class='bonus-bar__current-multiplier--3']
+${VLeagueBonus%_4}              xpath://div[@class='bonus-bar__current-multiplier--4']
+${VLeagueBonus%_5}              xpath://div[@class='bonus-bar__current-multiplier--5']
+${VLeagueBonus%_6}              xpath://div[@class='bonus-bar__current-multiplier--6']
+${VLeagueBonus%_7}              xpath://div[@class='bonus-bar__current-multiplier--7']
+${VLeagueBonus%_8}              xpath://div[@class='bonus-bar__current-multiplier--8']
+${VLeagueBonus%_9}              xpath://div[@class='bonus-bar__current-multiplier--9']
+${VLeagueBonus%_10}             xpath://div[@class='bonus-bar__current-multiplier--10']
 ${VLeagueMatchBet1Inactive_1}     xpath:(//div[@class='match-table']//div[@class='match-table__row'])[1]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='1']
 ${VLeagueMatchBet2Inactive_X}     xpath:(//div[@class='match-table']//div[@class='match-table__row'])[2]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='X']
+${VLeagueMatchBet3Inactive_2}     xpath:(//div[@class='match-table']//div[@class='match-table__row'])[3]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='2']
+${VLeagueMatchBet4Inactive_X}     xpath:(//div[@class='match-table']//div[@class='match-table__row'])[4]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='X']
+${VLeagueMatchBet5Inactive_1}     xpath:(//div[@class='match-table']//div[@class='match-table__row'])[5]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='1']
+${VLeagueMatchBet6Inactive_X}     xpath:(//div[@class='match-table']//div[@class='match-table__row'])[6]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='X']
+${VLeagueMatchBet7Inactive_2}     xpath:(//div[@class='match-table']//div[@class='match-table__row'])[7]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='2']
+${VLeagueMatchBet8Inactive_X}     xpath:(//div[@class='match-table']//div[@class='match-table__row'])[8]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='X']
+${VLeagueMatchBet9Inactive_1}     xpath:(//div[@class='match-table']//div[@class='match-table__row'])[9]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='1']
+${VLeagueMatchBet10Inactive_X}    xpath:(//div[@class='match-table']//div[@class='match-table__row'])[10]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='X']
+${VLeagueBetFromInput}            xpath://div[@class='bet-form__input-row']
+
+
+
+
+
 
