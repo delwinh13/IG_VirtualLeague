@@ -11,7 +11,7 @@ Library     DateTime
 
 
 *** Keywords ***
-#*********************************************** LoginVirtualLeague  ******************************************************
+#*********************************************** NavigatetoVirtualLeague  *************************************************
 Navigate to Virtual League
     Log to Console          Navigate to Virtual League
     Open Browser                        ${VLURL}  ${BROWSER}
@@ -24,6 +24,7 @@ Navigate to Virtual League
     ${Date} =  Get DateTime
     Set Global Variable  ${Path}  ${EXECDIR}${/}..\\IG_VirtualLeague\\Results\\Screenshots\\IG_VirtualLeague\\${Date}
 
+#*********************************************** LoginVirtualLeague  ******************************************************
 Login to Virtual League
     Log to Console          Login to Virtual League
 
@@ -89,8 +90,9 @@ Login to Virtual League
     Sleep       1
 
     Wait Until Element Is Enabled       ${DepositBtnXpath}              10 seconds
-    Screenshot      BetLion_Virtual League Logged in page-{index}
+    Screenshot      BetLion_Virtual League Logged in page.png
 
+#*********************************************** VLeagueHeader ************************************************************
 V-League Header
     Log to Console      V-League Header
 
@@ -100,228 +102,98 @@ V-League Header
     Click Element                       ${VLeagueHeader}
     Sleep       1
     Wait Until Element Is Enabled       ${VLeagueHeaderActive}          10 seconds
-    Screenshot      BetLion_Virtual League Landing Page-{index}.png
+    Screenshot      BetLion_Virtual League Landing Page.png
 
-Select Fixtures with Autostake
+#*********************************************** SwitchBetweenLeagues *****************************************************
+Switch Between Leagues
+    Log to Console      Switch Between Leagues
 
-    V-League Header
-
-    Log to Console      Select Fixtures with Autostake
-
-    Select Frame                        ${iFrame}
-    Sleep       1
-
-    #Validations
-        # Next Start Timer
-    Wait Until Element Is Visible       ${VLeagueNextStartTimer}                10 seconds
-    Element Should Be Enabled           ${VLeagueNextStartTimer}
-
-        # Competition Selector
-    Element Should Be Enabled           ${VLeagueCompSelectorDD}
-
-        # League Table Button
-    Element Should Be Enabled           ${VLeagueTableTab}
-
-        # Betslip Button Disabled
-    Element Should Be Visible           ${VLeagueBetslip}
-
-        # Matches Tab Highlighted by Default
-    Element Should Be Enabled          ${VLeagueMatchesTab}
-
-        # Live Tab Enabled
-    Element Should Be Enabled           ${VLeagueLiveTab}
-
-        # Results Tab Enabled
-    Element Should Be Enabled           ${VLeagueResultsTab}
-
-        # Bonus Bar Displayed = 0%
-    SeleniumLibrary.Element Text Should Be               ${VLeague0Bonus}                0%
-
-        # 0 Selected
-    SeleniumLibrary.Element Text Should Be               ${VLeagueSelected}              0
-
-        # Market Menu Items
-            #1 X 2
-    Element Should Be Enabled           ${VLeague1X2MenuItem}
-            #GG
-    Element Should Be Enabled           ${VLeagueGGMenuItem}
-            #0/U 2.5
-    Element Should Be Enabled           ${VLeague0U25MenuItem}
-            #DC
-    Element Should Be Enabled           ${VLeagueDCMenuItem}
-
-        # Match table displayed with 10 matches
-    ${count}=   Get Element Count       ${VLeagueMatchTableRows}
-    Should Be Equal As Integers         ${count}    10
-    Log to Console      Match Table Count = ${count}
-
-    Screenshot      BetLion_Virtual League Landing Validations-{index}.png
-
+    # All Competitions Shown
     # Competition Selector - V-EPL
     Click Element                       ${VLeagueCompSelectorDD}
-    Sleep       1
-    Wait Until Element Is Visible       ${VLeagueCompVEPL}                10 seconds
+    Wait Until Element Is Visible       ${VLeagueCompSelectorDDActive}  2 seconds
+    Page Should Contain Element         ${VLeagueCompSelectorDDActive}
+    # V-EPL Selected by Default
+    Page Should Contain Element         ${VLeagueCompVEPLSelected}
+    # All Competitions Shown
+    Page Should Contain Element         ${VLeagueCompVLaLiga}
+    Page Should Contain Element         ${VLeagueCompVAfricanNations}
+    Page Should Contain Element         ${VLeagueCompVWorldLeague}
+    # Flags displayed next to competitions
+    Page Should Contain Element         ${VLeagueCompVEPLFlag}
+    Page Should Contain Element         ${VLeagueCompVLaLigaFlag}
+    Page Should Contain Element         ${VLeagueCompVAfricanNationsFlag}
+    Page Should Contain Element         ${VLeagueCompVWorldLeagueFlag}
+
+    Screenshot      BetLion_Virtual League All Competitions Shown.png
+
+    # Competition Selector - V-EPL
+    Wait Until Element Is Visible       ${VLeagueCompVEPL}              10 seconds
     Click Element                       ${VLeagueCompVEPL}
     Sleep       1
+    #Validations
+        # V-EPL Teams Visible on page
+    Wait Until Element Is Visible       ${VLeagueCompVEPLArsenal}           10 seconds
+    Page Should Contain Element         ${VLeagueCompVEPLArsenal}
+    Page Should Contain Element         ${VLeagueCompVEPLChelsea}
 
-    # Matches
-    Click Element                       ${VLeagueMatchesTab}
-    Element Should Be Enabled           ${VLeagueMatchesTab}
+    Screenshot      BetLion_Virtual League V-EPL Teams Visible on page.png
 
-    # Betslip Inactive
-    Element Should Be Visible           ${VLeagueBetslipInactive}
-    # Bonus Progress = 0
-    Element Should Be Visible           ${VLeagueBonusProgress0}
-    # Bonus = 0%
-    Element Should Be Visible           ${VLeagueBonus%_0}
+    # Competition Selector - V-La Liga
+    Click Element                       ${VLeagueCompSelectorDD}
+    Wait Until Element Is Visible       ${VLeagueCompSelectorDDActive}  2 seconds
+    Page Should Contain Element         ${VLeagueCompSelectorDDActive}
+    Sleep       1
+    Wait Until Element Is Visible       ${VLeagueCompVLaLiga}               10 seconds
+    Click Element                       ${VLeagueCompVLaLiga}
+    Sleep       1
+    #Validations
+        # V-La Liga Teams Visible on page
+    Wait Until Element Is Visible       ${VLeagueCompVLaLigaAtleticoMadrid}           10 seconds
+    Page Should Contain Element         ${VLeagueCompVLaLigaAtleticoMadrid}
+    Page Should Contain Element         ${VLeagueCompVLaLigaBarcelona}
 
-    #Select Fixtures
-    # Match #1
-    Wait Until Element Is Visible       ${VLeagueMatchBet1Inactive_1}                10 seconds
-    Mouse Over                          ${VLeagueMatchBet1Inactive_1}
-    Click Element                       ${VLeagueMatchBet1Inactive_1}
+    Screenshot      BetLion_Virtual League V-La Liga Teams Visible on page.png
 
-    # Betslip Active = 1
-    Element Should Be Visible           ${VLeagueBetslipActive1}
-    # Bonus Progress = 1
-    Element Should Be Visible           ${VLeagueBonusProgress1}
-    # Bonus % = 1
-    Element Should Be Visible           ${VLeagueBonus%_1}
-    # 1 Selected
-    SeleniumLibrary.Element Text Should Be               ${VLeagueSelected}             1
+    # Competition Selector - V-African Nations
+    Click Element                       ${VLeagueCompSelectorDD}
+    # V-La Liga Selected
+    Page Should Contain Element         ${VLeagueCompVLaLigaSelected}
+    Sleep       1
+    Wait Until Element Is Visible       ${VLeagueCompVAfricanNations}   10 seconds
+    Click Element                       ${VLeagueCompVAfricanNations}
+    Sleep       1
+    #Validations
+        # V-African Nations Teams Visible on page
+    Wait Until Element Is Visible       ${VLeagueCompVAfricanNationsSouthAfrica}           10 seconds
+    Page Should Contain Element         ${VLeagueCompVAfricanNationsSouthAfrica}
+    Page Should Contain Element         ${VLeagueCompVAfricanNationsCameroon}
 
-    Screenshot      BetLion_VLeague 1 Fixture Bet Selected-{index}.png
+    Screenshot      BetLion_Virtual League V-African Nations Teams Visible on page.png
 
-    # Match #2
-    Wait Until Element Is Visible       ${VLeagueMatchBet2Inactive_X}                10 seconds
-    Mouse Over                          ${VLeagueMatchBet2Inactive_X}
-    Click Element                       ${VLeagueMatchBet2Inactive_X}
+    # Competition Selector - V-World League
+    Click Element                       ${VLeagueCompSelectorDD}
+    # V-World League Selected
+    Page Should Contain Element         ${VLeagueCompVAfricanNationsSelected}
+    Sleep       1
+    Wait Until Element Is Visible       ${VLeagueCompVWorldLeague}      10 seconds
+    Click Element                       ${VLeagueCompVWorldLeague}
+    Sleep       1
+    #Validations
+        # V-World League Teams Visible on page
+    Wait Until Element Is Visible       ${VLeagueCompVWorldLeagueEngland}           10 seconds
+    Page Should Contain Element         ${VLeagueCompVWorldLeagueEngland}
+    Page Should Contain Element         ${VLeagueCompVWorldLeagueBelgium}
 
-    # Betslip Active = 2
-    Element Should Be Visible           ${VLeagueBetslipActive2}
-    # Bonus Progress = 2
-    Element Should Be Visible           ${VLeagueBonusProgress2}
-    # Bonus % = 2
-    Element Should Be Visible           ${VLeagueBonus%_2}
-    # 2 Selected
-    SeleniumLibrary.Element Text Should Be               ${VLeagueSelected}             2
+    Screenshot      BetLion_Virtual League V-World League Teams Visible on page.png
 
-    Screenshot      BetLion_VLeague 2 Fixture Bet Selected-{index}.png
 
-    # Match #3
-    Wait Until Element Is Visible       ${VLeagueMatchBet3Inactive_2}                10 seconds
-    Mouse Over                          ${VLeagueMatchBet3Inactive_2}
-    Click Element                       ${VLeagueMatchBet3Inactive_2}
 
-    # Betslip Active = 2
-    Element Should Be Visible           ${VLeagueBetslipActive3}
-    # Bonus Progress = 2
-    Element Should Be Visible           ${VLeagueBonusProgress3}
-    # Bonus % = 2
-    Element Should Be Visible           ${VLeagueBonus%_3}
-    # 2 Selected
-    SeleniumLibrary.Element Text Should Be               ${VLeagueSelected}             3
 
-    # Match #4
-    Wait Until Element Is Visible       ${VLeagueMatchBet4Inactive_X}                10 seconds
-    Mouse Over                          ${VLeagueMatchBet4Inactive_X}
-    Click Element                       ${VLeagueMatchBet4Inactive_X}
 
-    # Betslip Active = 2
-    Element Should Be Visible           ${VLeagueBetslipActive4}
-    # Bonus Progress = 2
-    Element Should Be Visible           ${VLeagueBonusProgress4}
-    # Bonus % = 2
-    Element Should Be Visible           ${VLeagueBonus%_4}
-    # 2 Selected
-    SeleniumLibrary.Element Text Should Be               ${VLeagueSelected}             4
 
-    # Match #5
-    Wait Until Element Is Visible       ${VLeagueMatchBet5Inactive_1}                10 seconds
-    Mouse Over                          ${VLeagueMatchBet5Inactive_1}
-    Click Element                       ${VLeagueMatchBet5Inactive_1}
 
-    # Betslip Active = 2
-    Element Should Be Visible           ${VLeagueBetslipActive5}
-    # Bonus Progress = 2
-    Element Should Be Visible           ${VLeagueBonusProgress5}
-    # Bonus % = 2
-    Element Should Be Visible           ${VLeagueBonus%_5}
-    # 2 Selected
-    SeleniumLibrary.Element Text Should Be               ${VLeagueSelected}             5
 
-    # Match #6
-    Wait Until Element Is Visible       ${VLeagueMatchBet6Inactive_X}                10 seconds
-    Mouse Over                          ${VLeagueMatchBet6Inactive_X}
-    Click Element                       ${VLeagueMatchBet6Inactive_X}
-
-    # Betslip Active = 2
-    Element Should Be Visible           ${VLeagueBetslipActive6}
-    # Bonus Progress = 2
-    Element Should Be Visible           ${VLeagueBonusProgress6}
-    # Bonus % = 2
-    Element Should Be Visible           ${VLeagueBonus%_6}
-    # 2 Selected
-    SeleniumLibrary.Element Text Should Be               ${VLeagueSelected}             6
-
-    # Match #7
-    Wait Until Element Is Visible       ${VLeagueMatchBet7Inactive_2}                10 seconds
-    Mouse Over                          ${VLeagueMatchBet7Inactive_2}
-    Click Element                       ${VLeagueMatchBet7Inactive_2}
-
-    # Betslip Active = 2
-    Element Should Be Visible           ${VLeagueBetslipActive7}
-    # Bonus Progress = 2
-    Element Should Be Visible           ${VLeagueBonusProgress7}
-    # Bonus % = 2
-    Element Should Be Visible           ${VLeagueBonus%_7}
-    # 2 Selected
-    SeleniumLibrary.Element Text Should Be               ${VLeagueSelected}             7
-
-    # Match #8
-    Wait Until Element Is Visible       ${VLeagueMatchBet8Inactive_X}                10 seconds
-    Mouse Over                          ${VLeagueMatchBet8Inactive_X}
-    Click Element                       ${VLeagueMatchBet8Inactive_X}
-
-    # Betslip Active = 2
-    Element Should Be Visible           ${VLeagueBetslipActive8}
-    # Bonus Progress = 2
-    Element Should Be Visible           ${VLeagueBonusProgress8}
-    # Bonus % = 2
-    Element Should Be Visible           ${VLeagueBonus%_8}
-    # 2 Selected
-    SeleniumLibrary.Element Text Should Be               ${VLeagueSelected}             8
-
-    Scroll Element Into View            ${VLeagueBetFromInput}
-    Sleep   1
-
-    # Match #9
-    Wait Until Element Is Visible       ${VLeagueMatchBet9Inactive_1}                10 seconds
-    Mouse Over                          ${VLeagueMatchBet9Inactive_1}
-    Click Element                       ${VLeagueMatchBet9Inactive_1}
-
-    # Betslip Active = 2
-    Element Should Be Visible           ${VLeagueBetslipActive9}
-    # Bonus Progress = 2
-    Element Should Be Visible           ${VLeagueBonusProgress9}
-    # Bonus % = 2
-    Element Should Be Visible           ${VLeagueBonus%_9}
-    # 2 Selected
-    SeleniumLibrary.Element Text Should Be               ${VLeagueSelected}             9
-
-    # Match #10
-    Wait Until Element Is Visible       ${VLeagueMatchBet10Inactive_X}                10 seconds
-    Mouse Over                          ${VLeagueMatchBet10Inactive_X}
-    Click Element                       ${VLeagueMatchBet10Inactive_X}
-
-    # Betslip Active = 2
-    Element Should Be Visible           ${VLeagueBetslipActive10}
-    # Bonus Progress = 2
-    Element Should Be Visible           ${VLeagueBonusProgress10}
-    # Bonus % = 2
-    Element Should Be Visible           ${VLeagueBonus%_10}
-    # 2 Selected
-    SeleniumLibrary.Element Text Should Be               ${VLeagueSelected}             10
 
 
 

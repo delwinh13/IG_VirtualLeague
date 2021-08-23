@@ -1,85 +1,2363 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20210813 18:01:26.467" rpa="false" schemaversion="2">
-<suite id="s1" name="VLeague Fixtures AutoStake" source="C:\Users\Delwin\PhyCharmProjects\IG_VirtualLeague\TestCases\VLeague_Fixtures_AutoStake.robot">
+<robot generator="Robot 4.1 (Python 3.9.6 on win32)" generated="20210823 14:06:08.021" rpa="false" schemaversion="2">
+<suite id="s1" name="VLeague Fixtures AutoStake TC" source="C:\Users\Delwin\PhyCharmProjects\IG_VirtualLeague\TestCases\VLeague_Fixtures_AutoStake_TC.robot">
 <test id="s1-t1" name="Fixtures with Autostake">
 <kw name="Navigate to Virtual League" library="VL_keywords">
 <kw name="Log To Console" library="BuiltIn">
 <arg>Navigate to Virtual League</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20210813 18:01:26.655" endtime="20210813 18:01:26.655"/>
+<status status="PASS" starttime="20210823 14:06:08.177" endtime="20210823 14:06:08.178"/>
 </kw>
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${VLURL}</arg>
 <arg>${BROWSER}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20210813 18:01:26.656" level="INFO">Opening browser 'chrome' to base url 'https://staging.betlion.ke/home/virtualleague'.</msg>
-<status status="PASS" starttime="20210813 18:01:26.655" endtime="20210813 18:01:29.193"/>
+<msg timestamp="20210823 14:06:08.178" level="INFO">Opening browser 'chrome' to base url 'https://staging.betlion.ke/home/virtualleague'.</msg>
+<status status="PASS" starttime="20210823 14:06:08.178" endtime="20210823 14:06:10.241"/>
 </kw>
 <kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
 <arg>10 seconds</arg>
 <doc>Sets the implicit wait value used by Selenium.</doc>
-<status status="PASS" starttime="20210813 18:01:29.193" endtime="20210813 18:01:29.195"/>
+<status status="PASS" starttime="20210823 14:06:10.241" endtime="20210823 14:06:10.242"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20210813 18:01:29.195" endtime="20210813 18:01:29.315"/>
+<status status="PASS" starttime="20210823 14:06:10.242" endtime="20210823 14:06:10.364"/>
 </kw>
 <kw name="Sleep" library="BuiltIn">
 <arg>1</arg>
 <doc>Pauses the test executed for the given time.</doc>
-<msg timestamp="20210813 18:01:30.325" level="INFO">Slept 1 second</msg>
-<status status="PASS" starttime="20210813 18:01:29.315" endtime="20210813 18:01:30.325"/>
+<msg timestamp="20210823 14:06:11.368" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:10.364" endtime="20210823 14:06:11.368"/>
 </kw>
 <kw name="Log To Console" library="BuiltIn">
 <arg>Virtual League</arg>
 <doc>Logs the given message to the console.</doc>
-<status status="PASS" starttime="20210813 18:01:30.325" endtime="20210813 18:01:30.326"/>
+<status status="PASS" starttime="20210823 14:06:11.369" endtime="20210823 14:06:11.369"/>
 </kw>
 <kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
 <arg>${BetLionLogoXpath}</arg>
 <arg>10 seconds</arg>
 <doc>Waits until the element ``locator`` is enabled.</doc>
-<kw name="Capture Page Screenshot" library="SeleniumLibrary">
-<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
-<msg timestamp="20210813 18:01:40.686" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-1.png"&gt;&lt;img src="selenium-screenshot-1.png" width="800px"&gt;&lt;/a&gt;</msg>
-<status status="PASS" starttime="20210813 18:01:40.549" endtime="20210813 18:01:40.686"/>
-</kw>
-<msg timestamp="20210813 18:01:40.689" level="FAIL">Element with locator 'xpath://div[@class='BetLion-Lite-Mobile']/div/div[2]/div/div[3]/a/img' not found.</msg>
-<status status="FAIL" starttime="20210813 18:01:30.326" endtime="20210813 18:01:40.689"/>
+<status status="PASS" starttime="20210823 14:06:11.370" endtime="20210823 14:06:11.393"/>
 </kw>
 <kw name="Get DateTime" library="Common_keywords">
 <var>${Date}</var>
-<status status="NOT RUN" starttime="20210813 18:01:40.689" endtime="20210813 18:01:40.689"/>
+<kw name="Get Current Date" library="DateTime">
+<var>${date1}</var>
+<arg>result_format=%Y-%m-%d %H-%M-%S</arg>
+<doc>Returns current local or UTC time with an optional increment.</doc>
+<msg timestamp="20210823 14:06:11.395" level="INFO">${date1} = 2021-08-23 14-06-11</msg>
+<status status="PASS" starttime="20210823 14:06:11.393" endtime="20210823 14:06:11.395"/>
+</kw>
+<msg timestamp="20210823 14:06:11.395" level="INFO">${Date} = 2021-08-23 14-06-11</msg>
+<status status="PASS" starttime="20210823 14:06:11.393" endtime="20210823 14:06:11.395"/>
 </kw>
 <kw name="Set Global Variable" library="BuiltIn">
 <arg>${Path}</arg>
 <arg>${EXECDIR}${/}..\\IG_VirtualLeague\\Results\\Screenshots\\IG_VirtualLeague\\${Date}</arg>
 <doc>Makes a variable available globally in all tests and suites.</doc>
-<status status="NOT RUN" starttime="20210813 18:01:40.689" endtime="20210813 18:01:40.689"/>
+<msg timestamp="20210823 14:06:11.396" level="INFO">${Path} = C:\Users\Delwin\PhyCharmProjects\IG_VirtualLeague\..\IG_VirtualLeague\Results\Screenshots\IG_VirtualLeague\2021-08-23 14-06-11</msg>
+<status status="PASS" starttime="20210823 14:06:11.395" endtime="20210823 14:06:11.396"/>
 </kw>
-<status status="FAIL" starttime="20210813 18:01:26.655" endtime="20210813 18:01:40.689"/>
+<status status="PASS" starttime="20210823 14:06:08.177" endtime="20210823 14:06:11.396"/>
 </kw>
 <kw name="Login to Virtual League" library="VL_keywords">
-<status status="NOT RUN" starttime="20210813 18:01:40.690" endtime="20210813 18:01:40.690"/>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Login to Virtual League</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:06:11.397" endtime="20210823 14:06:11.398"/>
 </kw>
-<kw name="Select Fixtures with Autostake" library="VL_keywords">
-<status status="NOT RUN" starttime="20210813 18:01:40.691" endtime="20210813 18:01:40.691"/>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${HomeLoginBtnXpath}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:06:11.398" endtime="20210823 14:06:11.420"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:12.434" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:11.420" endtime="20210823 14:06:12.434"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20210823 14:06:12.434" endtime="20210823 14:06:12.437"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${AllowNotificationsBtnXpath}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:06:12.438" endtime="20210823 14:06:12.460"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${AllowNotificationsBtnXpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:12.460" level="INFO">Clicking element 'xpath://div[@id='dengage-push-perm-slide']/div/div[2]/div/button[text()='Allow']'.</msg>
+<status status="PASS" starttime="20210823 14:06:12.460" endtime="20210823 14:06:12.514"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:13.520" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:12.515" endtime="20210823 14:06:13.520"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>${iFrame}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20210823 14:06:13.520" level="INFO">Selecting frame 'xpath://iframe[@id='virtualFrame']'.</msg>
+<status status="PASS" starttime="20210823 14:06:13.520" endtime="20210823 14:06:13.548"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${WelcomePlayNowBtn}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:06:13.548" endtime="20210823 14:06:13.571"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${WelcomePlayNowBtn}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:13.572" level="INFO">Clicking element 'xpath://div[@class='virtual-league-app']//button[text()='Play Now']'.</msg>
+<status status="PASS" starttime="20210823 14:06:13.571" endtime="20210823 14:06:13.644"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:14.649" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:13.644" endtime="20210823 14:06:14.649"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20210823 14:06:14.649" endtime="20210823 14:06:14.655"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${HomeLoginBtnXpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:14.656" level="INFO">Clicking element 'xpath://div[@class='BLM-mainHeader-rightSection']//button[text()='Login']'.</msg>
+<status status="PASS" starttime="20210823 14:06:14.655" endtime="20210823 14:06:15.111"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:16.118" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:15.112" endtime="20210823 14:06:16.118"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${MobileNoID}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:06:16.118" endtime="20210823 14:06:16.158"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LoginBtnXpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:16.159" level="INFO">Clicking element 'xpath://body/div[1]/div[2]/div[1]/div[1]/button[1]/span[1]'.</msg>
+<status status="PASS" starttime="20210823 14:06:16.158" endtime="20210823 14:06:16.203"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:17.209" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:16.204" endtime="20210823 14:06:17.209"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${BlankCredentialsMsg}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:17.230" level="INFO">Current page contains element 'xpath://span[text()='Please enter valid credentials']'.</msg>
+<status status="PASS" starttime="20210823 14:06:17.210" endtime="20210823 14:06:17.230"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${MobileNoID}</arg>
+<arg>742343912</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:17.231" level="INFO">Typing text '742343912' into text field 'id:userMobile'.</msg>
+<status status="PASS" starttime="20210823 14:06:17.230" endtime="20210823 14:06:17.311"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LoginBtnXpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:17.313" level="INFO">Clicking element 'xpath://body/div[1]/div[2]/div[1]/div[1]/button[1]/span[1]'.</msg>
+<status status="PASS" starttime="20210823 14:06:17.312" endtime="20210823 14:06:17.353"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:18.362" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:17.354" endtime="20210823 14:06:18.362"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${BlankCredentialsMsg}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:18.370" level="INFO">Current page contains element 'xpath://span[text()='Please enter valid credentials']'.</msg>
+<status status="PASS" starttime="20210823 14:06:18.362" endtime="20210823 14:06:18.370"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${MobileNoID}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20210823 14:06:18.371" endtime="20210823 14:06:18.398"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PinID}</arg>
+<arg>1111</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:18.401" level="INFO">Typing text '1111' into text field 'id:userPass'.</msg>
+<status status="PASS" starttime="20210823 14:06:18.399" endtime="20210823 14:06:18.521"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LoginBtnXpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:18.522" level="INFO">Clicking element 'xpath://body/div[1]/div[2]/div[1]/div[1]/button[1]/span[1]'.</msg>
+<status status="PASS" starttime="20210823 14:06:18.522" endtime="20210823 14:06:18.569"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:19.585" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:18.570" endtime="20210823 14:06:19.585"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${BlankCredentialsMsg}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:19.597" level="INFO">Current page contains element 'xpath://span[text()='Please enter valid credentials']'.</msg>
+<status status="PASS" starttime="20210823 14:06:19.586" endtime="20210823 14:06:19.597"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${PinID}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20210823 14:06:19.598" endtime="20210823 14:06:19.636"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${MobileNoID}</arg>
+<arg>881659001</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:19.638" level="INFO">Typing text '881659001' into text field 'id:userMobile'.</msg>
+<status status="PASS" starttime="20210823 14:06:19.637" endtime="20210823 14:06:19.737"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PinID}</arg>
+<arg>9865</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:19.738" level="INFO">Typing text '9865' into text field 'id:userPass'.</msg>
+<status status="PASS" starttime="20210823 14:06:19.738" endtime="20210823 14:06:19.818"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LoginBtnXpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:19.818" level="INFO">Clicking element 'xpath://body/div[1]/div[2]/div[1]/div[1]/button[1]/span[1]'.</msg>
+<status status="PASS" starttime="20210823 14:06:19.818" endtime="20210823 14:06:19.886"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:20.894" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:19.886" endtime="20210823 14:06:20.895"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${InvalidCredentialsMsg}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:20.911" level="INFO">Current page contains element 'xpath://span[text()='Sorry, that username / password combination has not been recognised Code:401']'.</msg>
+<status status="PASS" starttime="20210823 14:06:20.895" endtime="20210823 14:06:20.911"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:21.918" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:20.911" endtime="20210823 14:06:21.918"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${MobileNoID}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20210823 14:06:21.918" endtime="20210823 14:06:21.955"/>
+</kw>
+<kw name="Clear Element Text" library="SeleniumLibrary">
+<arg>${PinID}</arg>
+<doc>Clears the value of the text-input-element identified by ``locator``.</doc>
+<status status="PASS" starttime="20210823 14:06:21.955" endtime="20210823 14:06:21.998"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:23.009" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:21.998" endtime="20210823 14:06:23.009"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${MobileNoID}</arg>
+<arg>742343912</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:23.011" level="INFO">Typing text '742343912' into text field 'id:userMobile'.</msg>
+<status status="PASS" starttime="20210823 14:06:23.010" endtime="20210823 14:06:23.097"/>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>${PinID}</arg>
+<arg>1111</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:23.098" level="INFO">Typing text '1111' into text field 'id:userPass'.</msg>
+<status status="PASS" starttime="20210823 14:06:23.098" endtime="20210823 14:06:23.175"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${LoginBtnXpath}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:23.177" level="INFO">Clicking element 'xpath://body/div[1]/div[2]/div[1]/div[1]/button[1]/span[1]'.</msg>
+<status status="PASS" starttime="20210823 14:06:23.176" endtime="20210823 14:06:23.245"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:24.250" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:23.245" endtime="20210823 14:06:24.250"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${DepositBtnXpath}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:06:24.250" endtime="20210823 14:06:24.410"/>
+</kw>
+<kw name="Screenshot" library="Common_keywords">
+<arg>BetLion_Virtual League Logged in page.png</arg>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${Path}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20210823 14:06:24.411" endtime="20210823 14:06:24.413"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${filename}.${TYPE OF FILE}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210823 14:06:24.610" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20Logged%20in%20page.png.png"&gt;&lt;img src="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20Logged%20in%20page.png.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210823 14:06:24.413" endtime="20210823 14:06:24.611"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}Screenshot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:06:24.611" endtime="20210823 14:06:24.612"/>
+</kw>
+<status status="PASS" starttime="20210823 14:06:24.410" endtime="20210823 14:06:24.612"/>
+</kw>
+<status status="PASS" starttime="20210823 14:06:11.396" endtime="20210823 14:06:24.613"/>
+</kw>
+<kw name="Select Fixtures with Auto Stake" library="Fixtures_AutoStake_keywords">
+<kw name="V-League Header" library="VL_keywords">
+<kw name="Log To Console" library="BuiltIn">
+<arg>V-League Header</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:06:24.614" endtime="20210823 14:06:24.615"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${VLeagueHomeActive}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:06:24.615" endtime="20210823 14:06:24.638"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueHeader}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:24.638" endtime="20210823 14:06:24.662"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueHeader}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:24.663" level="INFO">Clicking element 'xpath://div[@class='BLM-layout-header']//div[@class='BLM-subHeader']/ul[@class='topHeaderAddActiveClass']//li//a[@href='/Home/VirtualLeague']'.</msg>
+<status status="PASS" starttime="20210823 14:06:24.662" endtime="20210823 14:06:25.374"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:26.379" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:25.376" endtime="20210823 14:06:26.379"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" library="SeleniumLibrary">
+<arg>${VLeagueHeaderActive}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:06:26.379" endtime="20210823 14:06:26.411"/>
+</kw>
+<kw name="Screenshot" library="Common_keywords">
+<arg>BetLion_Virtual League Landing Page.png</arg>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${Path}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20210823 14:06:26.413" endtime="20210823 14:06:26.414"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${filename}.${TYPE OF FILE}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210823 14:06:26.613" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20Landing%20Page.png.png"&gt;&lt;img src="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20Landing%20Page.png.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210823 14:06:26.414" endtime="20210823 14:06:26.613"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}Screenshot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:06:26.614" endtime="20210823 14:06:26.614"/>
+</kw>
+<status status="PASS" starttime="20210823 14:06:26.411" endtime="20210823 14:06:26.615"/>
+</kw>
+<status status="PASS" starttime="20210823 14:06:24.614" endtime="20210823 14:06:26.615"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Select Fixtures with Auto Stake</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:06:26.615" endtime="20210823 14:06:26.616"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>${iFrame}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20210823 14:06:26.617" level="INFO">Selecting frame 'xpath://iframe[@id='virtualFrame']'.</msg>
+<status status="PASS" starttime="20210823 14:06:26.616" endtime="20210823 14:06:26.642"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:27.656" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:26.642" endtime="20210823 14:06:27.656"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueNextStartTimer}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:27.657" endtime="20210823 14:06:27.702"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${VLeagueNextStartTimer}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:06:27.702" endtime="20210823 14:06:27.736"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${VLeagueCompSelectorDD}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:06:27.737" endtime="20210823 14:06:27.775"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${VLeagueTableTab}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:06:27.775" endtime="20210823 14:06:27.845"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBetslip}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:27.878" level="INFO">Element 'xpath://a[@href='/matches']//div[text()='V-Betslip']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:27.845" endtime="20210823 14:06:27.878"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${VLeagueMatchesTab}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:06:27.878" endtime="20210823 14:06:27.923"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${VLeagueLiveTab}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:06:27.924" endtime="20210823 14:06:27.959"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${VLeagueResultsTab}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:06:27.960" endtime="20210823 14:06:27.996"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${VLeague0Bonus}</arg>
+<arg>0%</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210823 14:06:27.998" level="INFO">Verifying element 'xpath://div[@class='bonus-bar']//div[@class='bonus-bar__current-multiplier--0__number']' contains exact text '0%'.</msg>
+<status status="PASS" starttime="20210823 14:06:27.996" endtime="20210823 14:06:28.033"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${VLeagueSelected}</arg>
+<arg>0</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210823 14:06:28.033" level="INFO">Verifying element 'xpath://div[@class='bonus-bar']//span' contains exact text '0'.</msg>
+<status status="PASS" starttime="20210823 14:06:28.033" endtime="20210823 14:06:28.066"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${VLeague1X2MenuItem}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:06:28.067" endtime="20210823 14:06:28.104"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${VLeagueGGMenuItem}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:06:28.104" endtime="20210823 14:06:28.144"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${VLeague0U25MenuItem}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:06:28.145" endtime="20210823 14:06:28.188"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${VLeagueDCMenuItem}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:06:28.188" endtime="20210823 14:06:28.227"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${countMatches}</var>
+<arg>${VLeagueMatchTableRows}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20210823 14:06:28.243" level="INFO">${countMatches} = 10</msg>
+<status status="PASS" starttime="20210823 14:06:28.227" endtime="20210823 14:06:28.243"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${countMatches}</arg>
+<arg>10</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20210823 14:06:28.244" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210823 14:06:28.244" endtime="20210823 14:06:28.244"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Match Table Count = ${countMatches}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:06:28.244" endtime="20210823 14:06:28.245"/>
+</kw>
+<kw name="Screenshot" library="Common_keywords">
+<arg>BetLion_Virtual League Landing Validations.png</arg>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${Path}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20210823 14:06:28.247" endtime="20210823 14:06:28.247"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${filename}.${TYPE OF FILE}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210823 14:06:28.588" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20Landing%20Validations.png.png"&gt;&lt;img src="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20Landing%20Validations.png.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210823 14:06:28.247" endtime="20210823 14:06:28.590"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}Screenshot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:06:28.590" endtime="20210823 14:06:28.591"/>
+</kw>
+<status status="PASS" starttime="20210823 14:06:28.245" endtime="20210823 14:06:28.591"/>
+</kw>
+<kw name="Switch Between Leagues" library="VL_keywords">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Switch Between Leagues</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:06:28.592" endtime="20210823 14:06:28.592"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueCompSelectorDD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:28.593" level="INFO">Clicking element 'xpath://div[@class='competition-selector__select']'.</msg>
+<status status="PASS" starttime="20210823 14:06:28.592" endtime="20210823 14:06:28.702"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueCompSelectorDDActive}</arg>
+<arg>2 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:28.702" endtime="20210823 14:06:28.739"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompSelectorDDActive}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:28.750" level="INFO">Current page contains element 'xpath://div[@class='competition-selector__options-wrapper competition-selector__options-wrapper--active']'.</msg>
+<status status="PASS" starttime="20210823 14:06:28.740" endtime="20210823 14:06:28.750"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVEPLSelected}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:28.772" level="INFO">Current page contains element 'xpath://div[@class='competition-selector__options-wrapper competition-selector__options-wrapper--active']//div[@class='competition-selector__option competition-selector__option--selected'][text()='V-EPL']'.</msg>
+<status status="PASS" starttime="20210823 14:06:28.751" endtime="20210823 14:06:28.772"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVLaLiga}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:28.789" level="INFO">Current page contains element 'xpath://div[@class='competition-selector__options-wrapper competition-selector__options-wrapper--active']/div[text()='V-La Liga']'.</msg>
+<status status="PASS" starttime="20210823 14:06:28.773" endtime="20210823 14:06:28.790"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVAfricanNations}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:28.807" level="INFO">Current page contains element 'xpath://div[@class='competition-selector__options-wrapper competition-selector__options-wrapper--active']/div[text()='V-African Nations']'.</msg>
+<status status="PASS" starttime="20210823 14:06:28.790" endtime="20210823 14:06:28.807"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVWorldLeague}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:28.823" level="INFO">Current page contains element 'xpath://div[@class='competition-selector__options-wrapper competition-selector__options-wrapper--active']/div[text()='V-World League']'.</msg>
+<status status="PASS" starttime="20210823 14:06:28.808" endtime="20210823 14:06:28.823"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVEPLFlag}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:28.839" level="INFO">Current page contains element 'xpath://div[@class='competition-selector__options-wrapper competition-selector__options-wrapper--active']//span[contains(@style, 'background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAACIhL/AAAAACXBIWXMAACxLAAAsSwGlPZapAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAACiSURBVHgB7d')]'.</msg>
+<status status="PASS" starttime="20210823 14:06:28.823" endtime="20210823 14:06:28.839"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVLaLigaFlag}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:28.858" level="INFO">Current page contains element 'xpath://div[@class='competition-selector__options-wrapper competition-selector__options-wrapper--active']//span[contains(@style, 'background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAACIhL/AAAAACXBIWXMAACxLAAAsSwGlPZapAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAGJSURBVHgB7Z')]'.</msg>
+<status status="PASS" starttime="20210823 14:06:28.840" endtime="20210823 14:06:28.858"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVAfricanNationsFlag}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:28.876" level="INFO">Current page contains element 'xpath://div[@class='competition-selector__options-wrapper competition-selector__options-wrapper--active']//span[contains(@style, 'background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAcCAYAAAATFf3WAAAACXBIWXMAACxLAAAsSwGlPZapAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAtMSURBVHgBpV')]'.</msg>
+<status status="PASS" starttime="20210823 14:06:28.859" endtime="20210823 14:06:28.876"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVWorldLeagueFlag}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:28.892" level="INFO">Current page contains element 'xpath://div[@class='competition-selector__options-wrapper competition-selector__options-wrapper--active']//span[contains(@style, 'background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAYCAYAAACIhL/AAAAACXBIWXMAACxLAAAsSwGlPZapAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAr2SURBVHgBjV')]'.</msg>
+<status status="PASS" starttime="20210823 14:06:28.877" endtime="20210823 14:06:28.892"/>
+</kw>
+<kw name="Screenshot" library="Common_keywords">
+<arg>BetLion_Virtual League All Competitions Shown.png</arg>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${Path}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20210823 14:06:28.893" endtime="20210823 14:06:28.894"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${filename}.${TYPE OF FILE}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210823 14:06:29.222" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20All%20Competitions%20Shown.png.png"&gt;&lt;img src="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20All%20Competitions%20Shown.png.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210823 14:06:28.894" endtime="20210823 14:06:29.223"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}Screenshot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:06:29.223" endtime="20210823 14:06:29.224"/>
+</kw>
+<status status="PASS" starttime="20210823 14:06:28.892" endtime="20210823 14:06:29.224"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueCompVEPL}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:29.224" endtime="20210823 14:06:29.257"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVEPL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:29.258" level="INFO">Clicking element 'xpath://div[@class='competition-selector__options-wrapper competition-selector__options-wrapper--active']/div[text()='V-EPL']'.</msg>
+<status status="PASS" starttime="20210823 14:06:29.258" endtime="20210823 14:06:29.359"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:30.367" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:29.359" endtime="20210823 14:06:30.367"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueCompVEPLArsenal}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:30.367" endtime="20210823 14:06:30.404"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVEPLArsenal}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:30.415" level="INFO">Current page contains element 'xpath://div[@class='match-table']//span[text()='Arsenal']'.</msg>
+<status status="PASS" starttime="20210823 14:06:30.405" endtime="20210823 14:06:30.415"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVEPLChelsea}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:30.430" level="INFO">Current page contains element 'xpath://div[@class='match-table']//span[text()='Chelsea']'.</msg>
+<status status="PASS" starttime="20210823 14:06:30.415" endtime="20210823 14:06:30.430"/>
+</kw>
+<kw name="Screenshot" library="Common_keywords">
+<arg>BetLion_Virtual League V-EPL Teams Visible on page.png</arg>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${Path}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20210823 14:06:30.431" endtime="20210823 14:06:30.432"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${filename}.${TYPE OF FILE}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210823 14:06:30.601" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20V-EPL%20Teams%20Visible%20on%20page.png.png"&gt;&lt;img src="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20V-EPL%20Teams%20Visible%20on%20page.png.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210823 14:06:30.432" endtime="20210823 14:06:30.601"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}Screenshot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:06:30.602" endtime="20210823 14:06:30.603"/>
+</kw>
+<status status="PASS" starttime="20210823 14:06:30.430" endtime="20210823 14:06:30.603"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueCompSelectorDD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:30.604" level="INFO">Clicking element 'xpath://div[@class='competition-selector__select']'.</msg>
+<status status="PASS" starttime="20210823 14:06:30.603" endtime="20210823 14:06:30.655"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueCompSelectorDDActive}</arg>
+<arg>2 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:30.656" endtime="20210823 14:06:30.679"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompSelectorDDActive}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:30.687" level="INFO">Current page contains element 'xpath://div[@class='competition-selector__options-wrapper competition-selector__options-wrapper--active']'.</msg>
+<status status="PASS" starttime="20210823 14:06:30.679" endtime="20210823 14:06:30.687"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:31.700" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:30.687" endtime="20210823 14:06:31.701"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueCompVLaLiga}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:31.701" endtime="20210823 14:06:31.730"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVLaLiga}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:31.731" level="INFO">Clicking element 'xpath://div[@class='competition-selector__options-wrapper competition-selector__options-wrapper--active']/div[text()='V-La Liga']'.</msg>
+<status status="PASS" starttime="20210823 14:06:31.730" endtime="20210823 14:06:31.813"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:32.816" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:31.813" endtime="20210823 14:06:32.816"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueCompVLaLigaAtleticoMadrid}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:32.816" endtime="20210823 14:06:32.849"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVLaLigaAtleticoMadrid}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:32.858" level="INFO">Current page contains element 'xpath://div[@class='match-table']//span[text()='Atlético Madrid']'.</msg>
+<status status="PASS" starttime="20210823 14:06:32.849" endtime="20210823 14:06:32.858"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVLaLigaBarcelona}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:32.872" level="INFO">Current page contains element 'xpath://div[@class='match-table']//span[text()='Barcelona']'.</msg>
+<status status="PASS" starttime="20210823 14:06:32.858" endtime="20210823 14:06:32.872"/>
+</kw>
+<kw name="Screenshot" library="Common_keywords">
+<arg>BetLion_Virtual League V-La Liga Teams Visible on page.png</arg>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${Path}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20210823 14:06:32.872" endtime="20210823 14:06:32.873"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${filename}.${TYPE OF FILE}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210823 14:06:33.052" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20V-La%20Liga%20Teams%20Visible%20on%20page.png.png"&gt;&lt;img src="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20V-La%20Liga%20Teams%20Visible%20on%20page.png.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210823 14:06:32.873" endtime="20210823 14:06:33.052"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}Screenshot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:06:33.053" endtime="20210823 14:06:33.053"/>
+</kw>
+<status status="PASS" starttime="20210823 14:06:32.872" endtime="20210823 14:06:33.054"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueCompSelectorDD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:33.054" level="INFO">Clicking element 'xpath://div[@class='competition-selector__select']'.</msg>
+<status status="PASS" starttime="20210823 14:06:33.054" endtime="20210823 14:06:33.108"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVLaLigaSelected}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:33.121" level="INFO">Current page contains element 'xpath://div[@class='competition-selector__options-wrapper competition-selector__options-wrapper--active']//div[@class='competition-selector__option competition-selector__option--selected'][text()='V-La Liga']'.</msg>
+<status status="PASS" starttime="20210823 14:06:33.110" endtime="20210823 14:06:33.121"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:34.133" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:33.121" endtime="20210823 14:06:34.134"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueCompVAfricanNations}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:34.134" endtime="20210823 14:06:34.155"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVAfricanNations}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:34.157" level="INFO">Clicking element 'xpath://div[@class='competition-selector__options-wrapper competition-selector__options-wrapper--active']/div[text()='V-African Nations']'.</msg>
+<status status="PASS" starttime="20210823 14:06:34.156" endtime="20210823 14:06:34.290"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:35.294" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:34.291" endtime="20210823 14:06:35.294"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueCompVAfricanNationsSouthAfrica}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:35.294" endtime="20210823 14:06:35.328"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVAfricanNationsSouthAfrica}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:35.338" level="INFO">Current page contains element 'xpath://div[@class='match-table']//span[text()='South Africa']'.</msg>
+<status status="PASS" starttime="20210823 14:06:35.329" endtime="20210823 14:06:35.339"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVAfricanNationsCameroon}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:35.356" level="INFO">Current page contains element 'xpath://div[@class='match-table']//span[text()='Cameroon']'.</msg>
+<status status="PASS" starttime="20210823 14:06:35.339" endtime="20210823 14:06:35.356"/>
+</kw>
+<kw name="Screenshot" library="Common_keywords">
+<arg>BetLion_Virtual League V-African Nations Teams Visible on page.png</arg>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${Path}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20210823 14:06:35.357" endtime="20210823 14:06:35.358"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${filename}.${TYPE OF FILE}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210823 14:06:35.706" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20V-African%20Nations%20Teams%20Visible%20on%20page.png.png"&gt;&lt;img src="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20V-African%20Nations%20Teams%20Visible%20on%20page.png.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210823 14:06:35.358" endtime="20210823 14:06:35.706"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}Screenshot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:06:35.707" endtime="20210823 14:06:35.707"/>
+</kw>
+<status status="PASS" starttime="20210823 14:06:35.356" endtime="20210823 14:06:35.708"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueCompSelectorDD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:35.708" level="INFO">Clicking element 'xpath://div[@class='competition-selector__select']'.</msg>
+<status status="PASS" starttime="20210823 14:06:35.708" endtime="20210823 14:06:35.777"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVAfricanNationsSelected}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:35.796" level="INFO">Current page contains element 'xpath://div[@class='competition-selector__options-wrapper competition-selector__options-wrapper--active']//div[@class='competition-selector__option competition-selector__option--selected'][text()='V-African Nations']'.</msg>
+<status status="PASS" starttime="20210823 14:06:35.777" endtime="20210823 14:06:35.796"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:36.809" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:35.796" endtime="20210823 14:06:36.809"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueCompVWorldLeague}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:36.809" endtime="20210823 14:06:36.839"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVWorldLeague}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:36.840" level="INFO">Clicking element 'xpath://div[@class='competition-selector__options-wrapper competition-selector__options-wrapper--active']/div[text()='V-World League']'.</msg>
+<status status="PASS" starttime="20210823 14:06:36.839" endtime="20210823 14:06:36.957"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:37.971" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:36.957" endtime="20210823 14:06:37.971"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueCompVWorldLeagueEngland}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:37.971" endtime="20210823 14:06:38.008"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVWorldLeagueEngland}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:38.018" level="INFO">Current page contains element 'xpath://div[@class='match-table']//span[text()='England']'.</msg>
+<status status="PASS" starttime="20210823 14:06:38.008" endtime="20210823 14:06:38.018"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVWorldLeagueBelgium}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:06:38.034" level="INFO">Current page contains element 'xpath://div[@class='match-table']//span[text()='Belgium']'.</msg>
+<status status="PASS" starttime="20210823 14:06:38.018" endtime="20210823 14:06:38.034"/>
+</kw>
+<kw name="Screenshot" library="Common_keywords">
+<arg>BetLion_Virtual League V-World League Teams Visible on page.png</arg>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${Path}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20210823 14:06:38.035" endtime="20210823 14:06:38.036"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${filename}.${TYPE OF FILE}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210823 14:06:38.372" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20V-World%20League%20Teams%20Visible%20on%20page.png.png"&gt;&lt;img src="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20V-World%20League%20Teams%20Visible%20on%20page.png.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210823 14:06:38.036" endtime="20210823 14:06:38.372"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}Screenshot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:06:38.372" endtime="20210823 14:06:38.373"/>
+</kw>
+<status status="PASS" starttime="20210823 14:06:38.034" endtime="20210823 14:06:38.373"/>
+</kw>
+<status status="PASS" starttime="20210823 14:06:28.591" endtime="20210823 14:06:38.374"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueCompSelectorDD}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:38.374" level="INFO">Clicking element 'xpath://div[@class='competition-selector__select']'.</msg>
+<status status="PASS" starttime="20210823 14:06:38.374" endtime="20210823 14:06:38.438"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:39.443" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:38.439" endtime="20210823 14:06:39.443"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueCompVEPL}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:39.443" endtime="20210823 14:06:39.468"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueCompVEPL}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:39.469" level="INFO">Clicking element 'xpath://div[@class='competition-selector__options-wrapper competition-selector__options-wrapper--active']/div[text()='V-EPL']'.</msg>
+<status status="PASS" starttime="20210823 14:06:39.469" endtime="20210823 14:06:39.563"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:40.572" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:39.563" endtime="20210823 14:06:40.573"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueMatchesTab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:40.574" level="INFO">Clicking element 'xpath://li[@class='menu__item']//a[@class='active'][text()='Matches']'.</msg>
+<status status="PASS" starttime="20210823 14:06:40.573" endtime="20210823 14:06:40.657"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${VLeagueMatchesTab}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:06:40.657" endtime="20210823 14:06:40.678"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBetslipInactive}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:40.703" level="INFO">Element 'xpath://div[@class='menu__item-betslip menu__item-betslip--inactive']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:40.679" endtime="20210823 14:06:40.703"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonusProgress0}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:40.727" level="INFO">Element 'xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class][1][text()='1']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:40.703" endtime="20210823 14:06:40.727"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonus%_0}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:40.755" level="INFO">Element 'xpath://div[@class='bonus-bar__current-multiplier--0']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:40.728" endtime="20210823 14:06:40.755"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet1Inactive_1}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:40.755" endtime="20210823 14:06:40.781"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet1Inactive_1}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210823 14:06:40.782" level="INFO">Simulating Mouse Over on element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[1]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='1']'.</msg>
+<status status="PASS" starttime="20210823 14:06:40.781" endtime="20210823 14:06:41.086"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet1Inactive_1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:41.087" level="INFO">Clicking element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[1]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='1']'.</msg>
+<status status="PASS" starttime="20210823 14:06:41.087" endtime="20210823 14:06:41.184"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBetslipActive1}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:41.478" level="INFO">Element 'xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='1']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:41.184" endtime="20210823 14:06:41.479"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonusProgress1}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:41.504" level="INFO">Element 'xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__1']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:41.479" endtime="20210823 14:06:41.504"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonus%_1}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:41.547" level="INFO">Element 'xpath://div[@class='bonus-bar__current-multiplier--1']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:41.504" endtime="20210823 14:06:41.547"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${VLeagueSelected}</arg>
+<arg>1</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210823 14:06:41.548" level="INFO">Verifying element 'xpath://div[@class='bonus-bar']//span' contains exact text '1'.</msg>
+<status status="PASS" starttime="20210823 14:06:41.547" endtime="20210823 14:06:41.574"/>
+</kw>
+<kw name="Screenshot" library="Common_keywords">
+<arg>BetLion_VLeague 1 Fixture Bet Selected.png</arg>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${Path}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20210823 14:06:41.575" endtime="20210823 14:06:41.576"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${filename}.${TYPE OF FILE}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210823 14:06:41.879" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_VLeague%201%20Fixture%20Bet%20Selected.png.png"&gt;&lt;img src="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_VLeague%201%20Fixture%20Bet%20Selected.png.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210823 14:06:41.576" endtime="20210823 14:06:41.879"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}Screenshot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:06:41.879" endtime="20210823 14:06:41.880"/>
+</kw>
+<status status="PASS" starttime="20210823 14:06:41.574" endtime="20210823 14:06:41.880"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet2Inactive_X}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:41.881" endtime="20210823 14:06:41.906"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet2Inactive_X}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210823 14:06:41.906" level="INFO">Simulating Mouse Over on element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[2]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='X']'.</msg>
+<status status="PASS" starttime="20210823 14:06:41.906" endtime="20210823 14:06:42.205"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet2Inactive_X}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:42.206" level="INFO">Clicking element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[2]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='X']'.</msg>
+<status status="PASS" starttime="20210823 14:06:42.205" endtime="20210823 14:06:42.291"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBetslipActive2}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:42.531" level="INFO">Element 'xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='2']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:42.291" endtime="20210823 14:06:42.532"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonusProgress2}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:42.570" level="INFO">Element 'xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__2']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:42.532" endtime="20210823 14:06:42.571"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonus%_2}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:42.607" level="INFO">Element 'xpath://div[@class='bonus-bar__current-multiplier--2']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:42.571" endtime="20210823 14:06:42.607"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${VLeagueSelected}</arg>
+<arg>2</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210823 14:06:42.608" level="INFO">Verifying element 'xpath://div[@class='bonus-bar']//span' contains exact text '2'.</msg>
+<status status="PASS" starttime="20210823 14:06:42.607" endtime="20210823 14:06:42.634"/>
+</kw>
+<kw name="Screenshot" library="Common_keywords">
+<arg>BetLion_VLeague 2 Fixture Bet Selected.png</arg>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${Path}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20210823 14:06:42.635" endtime="20210823 14:06:42.635"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${filename}.${TYPE OF FILE}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210823 14:06:42.990" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_VLeague%202%20Fixture%20Bet%20Selected.png.png"&gt;&lt;img src="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_VLeague%202%20Fixture%20Bet%20Selected.png.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210823 14:06:42.636" endtime="20210823 14:06:42.990"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}Screenshot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:06:42.990" endtime="20210823 14:06:42.991"/>
+</kw>
+<status status="PASS" starttime="20210823 14:06:42.634" endtime="20210823 14:06:42.991"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet3Inactive_2}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:42.992" endtime="20210823 14:06:43.027"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet3Inactive_2}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210823 14:06:43.027" level="INFO">Simulating Mouse Over on element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[3]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='2']'.</msg>
+<status status="PASS" starttime="20210823 14:06:43.027" endtime="20210823 14:06:43.339"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet3Inactive_2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:43.340" level="INFO">Clicking element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[3]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='2']'.</msg>
+<status status="PASS" starttime="20210823 14:06:43.339" endtime="20210823 14:06:43.419"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBetslipActive3}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:43.650" level="INFO">Element 'xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='3']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:43.419" endtime="20210823 14:06:43.650"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonusProgress3}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:43.683" level="INFO">Element 'xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__3']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:43.650" endtime="20210823 14:06:43.683"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonus%_3}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:43.715" level="INFO">Element 'xpath://div[@class='bonus-bar__current-multiplier--3']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:43.683" endtime="20210823 14:06:43.715"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${VLeagueSelected}</arg>
+<arg>3</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210823 14:06:43.716" level="INFO">Verifying element 'xpath://div[@class='bonus-bar']//span' contains exact text '3'.</msg>
+<status status="PASS" starttime="20210823 14:06:43.715" endtime="20210823 14:06:43.737"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet4Inactive_X}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:43.737" endtime="20210823 14:06:43.767"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet4Inactive_X}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210823 14:06:43.768" level="INFO">Simulating Mouse Over on element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[4]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='X']'.</msg>
+<status status="PASS" starttime="20210823 14:06:43.767" endtime="20210823 14:06:44.086"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet4Inactive_X}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:44.087" level="INFO">Clicking element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[4]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='X']'.</msg>
+<status status="PASS" starttime="20210823 14:06:44.086" endtime="20210823 14:06:44.163"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBetslipActive4}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:44.443" level="INFO">Element 'xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='4']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:44.164" endtime="20210823 14:06:44.443"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonusProgress4}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:44.477" level="INFO">Element 'xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__4']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:44.444" endtime="20210823 14:06:44.477"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonus%_4}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:44.501" level="INFO">Element 'xpath://div[@class='bonus-bar__current-multiplier--4']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:44.478" endtime="20210823 14:06:44.501"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${VLeagueSelected}</arg>
+<arg>4</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210823 14:06:44.502" level="INFO">Verifying element 'xpath://div[@class='bonus-bar']//span' contains exact text '4'.</msg>
+<status status="PASS" starttime="20210823 14:06:44.501" endtime="20210823 14:06:44.523"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet5Inactive_1}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:44.523" endtime="20210823 14:06:44.550"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet5Inactive_1}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210823 14:06:44.551" level="INFO">Simulating Mouse Over on element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[5]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='1']'.</msg>
+<status status="PASS" starttime="20210823 14:06:44.550" endtime="20210823 14:06:44.846"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet5Inactive_1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:44.847" level="INFO">Clicking element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[5]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='1']'.</msg>
+<status status="PASS" starttime="20210823 14:06:44.847" endtime="20210823 14:06:44.922"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBetslipActive5}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:45.254" level="INFO">Element 'xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='5']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:44.922" endtime="20210823 14:06:45.254"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonusProgress5}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:45.284" level="INFO">Element 'xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__5']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:45.254" endtime="20210823 14:06:45.284"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonus%_5}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:45.313" level="INFO">Element 'xpath://div[@class='bonus-bar__current-multiplier--5']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:45.285" endtime="20210823 14:06:45.313"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${VLeagueSelected}</arg>
+<arg>5</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210823 14:06:45.314" level="INFO">Verifying element 'xpath://div[@class='bonus-bar']//span' contains exact text '5'.</msg>
+<status status="PASS" starttime="20210823 14:06:45.314" endtime="20210823 14:06:45.334"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet6Inactive_X}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:45.334" endtime="20210823 14:06:45.363"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet6Inactive_X}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210823 14:06:45.364" level="INFO">Simulating Mouse Over on element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[6]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='X']'.</msg>
+<status status="PASS" starttime="20210823 14:06:45.363" endtime="20210823 14:06:45.667"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet6Inactive_X}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:45.668" level="INFO">Clicking element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[6]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='X']'.</msg>
+<status status="PASS" starttime="20210823 14:06:45.668" endtime="20210823 14:06:45.752"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBetslipActive6}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:46.029" level="INFO">Element 'xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='6']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:45.752" endtime="20210823 14:06:46.030"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonusProgress6}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:46.056" level="INFO">Element 'xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__6']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:46.031" endtime="20210823 14:06:46.056"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonus%_6}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:46.082" level="INFO">Element 'xpath://div[@class='bonus-bar__current-multiplier--6']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:46.057" endtime="20210823 14:06:46.082"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${VLeagueSelected}</arg>
+<arg>6</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210823 14:06:46.083" level="INFO">Verifying element 'xpath://div[@class='bonus-bar']//span' contains exact text '6'.</msg>
+<status status="PASS" starttime="20210823 14:06:46.083" endtime="20210823 14:06:46.100"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet7Inactive_2}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:46.102" endtime="20210823 14:06:46.127"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet7Inactive_2}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210823 14:06:46.128" level="INFO">Simulating Mouse Over on element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[7]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='2']'.</msg>
+<status status="PASS" starttime="20210823 14:06:46.127" endtime="20210823 14:06:46.431"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet7Inactive_2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:46.432" level="INFO">Clicking element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[7]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='2']'.</msg>
+<status status="PASS" starttime="20210823 14:06:46.431" endtime="20210823 14:06:46.535"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBetslipActive7}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:46.769" level="INFO">Element 'xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='7']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:46.536" endtime="20210823 14:06:46.769"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonusProgress7}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:46.799" level="INFO">Element 'xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__7']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:46.770" endtime="20210823 14:06:46.799"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonus%_7}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:46.826" level="INFO">Element 'xpath://div[@class='bonus-bar__current-multiplier--7']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:46.799" endtime="20210823 14:06:46.826"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${VLeagueSelected}</arg>
+<arg>7</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210823 14:06:46.827" level="INFO">Verifying element 'xpath://div[@class='bonus-bar']//span' contains exact text '7'.</msg>
+<status status="PASS" starttime="20210823 14:06:46.826" endtime="20210823 14:06:46.843"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet8Inactive_X}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:46.843" endtime="20210823 14:06:46.866"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet8Inactive_X}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210823 14:06:46.867" level="INFO">Simulating Mouse Over on element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[8]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='X']'.</msg>
+<status status="PASS" starttime="20210823 14:06:46.867" endtime="20210823 14:06:47.177"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet8Inactive_X}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:47.179" level="INFO">Clicking element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[8]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='X']'.</msg>
+<status status="PASS" starttime="20210823 14:06:47.178" endtime="20210823 14:06:47.286"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBetslipActive8}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:47.521" level="INFO">Element 'xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='8']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:47.286" endtime="20210823 14:06:47.522"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonusProgress8}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:47.549" level="INFO">Element 'xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__8']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:47.522" endtime="20210823 14:06:47.549"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonus%_8}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:47.581" level="INFO">Element 'xpath://div[@class='bonus-bar__current-multiplier--8']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:47.549" endtime="20210823 14:06:47.581"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${VLeagueSelected}</arg>
+<arg>8</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210823 14:06:47.583" level="INFO">Verifying element 'xpath://div[@class='bonus-bar']//span' contains exact text '8'.</msg>
+<status status="PASS" starttime="20210823 14:06:47.582" endtime="20210823 14:06:47.604"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:48.621" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:47.604" endtime="20210823 14:06:48.621"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20210823 14:06:48.621" endtime="20210823 14:06:48.626"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,500)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210823 14:06:48.627" level="INFO">Executing JavaScript:
+window.scrollTo(0,500)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210823 14:06:48.626" endtime="20210823 14:06:48.636"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>${iFrame}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20210823 14:06:48.637" level="INFO">Selecting frame 'xpath://iframe[@id='virtualFrame']'.</msg>
+<status status="PASS" starttime="20210823 14:06:48.637" endtime="20210823 14:06:48.674"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:49.690" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:48.674" endtime="20210823 14:06:49.690"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet9Inactive_1}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:49.691" endtime="20210823 14:06:49.727"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet9Inactive_1}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210823 14:06:49.728" level="INFO">Simulating Mouse Over on element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[9]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='1']'.</msg>
+<status status="PASS" starttime="20210823 14:06:49.728" endtime="20210823 14:06:50.037"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet9Inactive_1}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:50.038" level="INFO">Clicking element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[9]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='1']'.</msg>
+<status status="PASS" starttime="20210823 14:06:50.037" endtime="20210823 14:06:50.126"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBetslipActive9}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:50.338" level="INFO">Element 'xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='9']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:50.127" endtime="20210823 14:06:50.338"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonusProgress9}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:50.370" level="INFO">Element 'xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__9']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:50.339" endtime="20210823 14:06:50.370"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonus%_9}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:50.401" level="INFO">Element 'xpath://div[@class='bonus-bar__current-multiplier--9']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:50.371" endtime="20210823 14:06:50.401"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${VLeagueSelected}</arg>
+<arg>9</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210823 14:06:50.402" level="INFO">Verifying element 'xpath://div[@class='bonus-bar']//span' contains exact text '9'.</msg>
+<status status="PASS" starttime="20210823 14:06:50.401" endtime="20210823 14:06:50.422"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet10Inactive_X}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:50.423" endtime="20210823 14:06:50.450"/>
+</kw>
+<kw name="Mouse Over" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet10Inactive_X}</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<msg timestamp="20210823 14:06:50.450" level="INFO">Simulating Mouse Over on element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[10]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='X']'.</msg>
+<status status="PASS" starttime="20210823 14:06:50.450" endtime="20210823 14:06:50.749"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet10Inactive_X}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:50.750" level="INFO">Clicking element 'xpath:(//div[@class='match-table']//div[@class='match-table__row'])[10]//div[@class='match-table__col-wrapper'][1]//div[@class='match-table__selection-name'][text()='X']'.</msg>
+<status status="PASS" starttime="20210823 14:06:50.749" endtime="20210823 14:06:50.848"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:51.863" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:50.849" endtime="20210823 14:06:51.863"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20210823 14:06:51.863" endtime="20210823 14:06:51.869"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,-500)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210823 14:06:51.870" level="INFO">Executing JavaScript:
+window.scrollTo(0,-500)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210823 14:06:51.869" endtime="20210823 14:06:51.880"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>${iFrame}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20210823 14:06:51.881" level="INFO">Selecting frame 'xpath://iframe[@id='virtualFrame']'.</msg>
+<status status="PASS" starttime="20210823 14:06:51.880" endtime="20210823 14:06:51.911"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:52.920" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:51.911" endtime="20210823 14:06:52.920"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBetslipActive10}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:52.956" level="INFO">Element 'xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='10']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:52.921" endtime="20210823 14:06:52.956"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonusProgress10}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:52.989" level="INFO">Element 'xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__10']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:52.957" endtime="20210823 14:06:52.989"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonus%_10}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:53.016" level="INFO">Element 'xpath://div[@class='bonus-bar__current-multiplier--10']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:52.989" endtime="20210823 14:06:53.017"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${VLeagueSelected}</arg>
+<arg>10</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210823 14:06:53.018" level="INFO">Verifying element 'xpath://div[@class='bonus-bar']//span' contains exact text '10'.</msg>
+<status status="PASS" starttime="20210823 14:06:53.017" endtime="20210823 14:06:53.035"/>
+</kw>
+<kw name="Screenshot" library="Common_keywords">
+<arg>BetLion_Virtual League 10 Bets_Bonus Max%.png</arg>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${Path}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20210823 14:06:53.036" endtime="20210823 14:06:53.037"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${filename}.${TYPE OF FILE}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210823 14:06:53.362" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%2010%20Bets_Bonus%20Max%25.png.png"&gt;&lt;img src="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%2010%20Bets_Bonus%20Max%25.png.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210823 14:06:53.037" endtime="20210823 14:06:53.364"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}Screenshot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:06:53.364" endtime="20210823 14:06:53.365"/>
+</kw>
+<status status="PASS" starttime="20210823 14:06:53.036" endtime="20210823 14:06:53.365"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:54.366" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:53.365" endtime="20210823 14:06:54.366"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20210823 14:06:54.366" endtime="20210823 14:06:54.372"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,800)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210823 14:06:54.373" level="INFO">Executing JavaScript:
+window.scrollTo(0,800)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210823 14:06:54.372" endtime="20210823 14:06:54.380"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>${iFrame}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20210823 14:06:54.381" level="INFO">Selecting frame 'xpath://iframe[@id='virtualFrame']'.</msg>
+<status status="PASS" starttime="20210823 14:06:54.380" endtime="20210823 14:06:54.408"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:55.417" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:54.409" endtime="20210823 14:06:55.417"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${countBetslipRows}</var>
+<arg>${VLeagueBetslipRows}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20210823 14:06:55.436" level="INFO">${countBetslipRows} = 10</msg>
+<status status="PASS" starttime="20210823 14:06:55.418" endtime="20210823 14:06:55.436"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${countBetslipRows}</arg>
+<arg>10</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20210823 14:06:55.437" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210823 14:06:55.437" endtime="20210823 14:06:55.437"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>BetSlip Row Count = ${countBetslipRows}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:06:55.437" endtime="20210823 14:06:55.439"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueBetslipBetRow1Cancel}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:06:55.439" endtime="20210823 14:06:55.468"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueBetslipBetRow1Cancel}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:06:55.469" level="INFO">Clicking element 'xpath://div[@class='betslip-table']//div[@class='bet-row'][1]//div[@class='bet-row__cancel']'.</msg>
+<status status="PASS" starttime="20210823 14:06:55.469" endtime="20210823 14:06:55.567"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:56.579" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:55.567" endtime="20210823 14:06:56.579"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${countBetslipRows}</var>
+<arg>${VLeagueBetslipRows}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20210823 14:06:56.594" level="INFO">${countBetslipRows} = 9</msg>
+<status status="PASS" starttime="20210823 14:06:56.579" endtime="20210823 14:06:56.594"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${countBetslipRows}</arg>
+<arg>9</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20210823 14:06:56.595" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210823 14:06:56.594" endtime="20210823 14:06:56.595"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>BetSlip Row Count = ${countBetslipRows}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:06:56.595" endtime="20210823 14:06:56.596"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:57.602" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:56.596" endtime="20210823 14:06:57.602"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20210823 14:06:57.603" endtime="20210823 14:06:57.608"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,-800)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210823 14:06:57.610" level="INFO">Executing JavaScript:
+window.scrollTo(0,-800)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210823 14:06:57.608" endtime="20210823 14:06:57.618"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>${iFrame}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20210823 14:06:57.619" level="INFO">Selecting frame 'xpath://iframe[@id='virtualFrame']'.</msg>
+<status status="PASS" starttime="20210823 14:06:57.618" endtime="20210823 14:06:57.643"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:06:58.656" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:57.645" endtime="20210823 14:06:58.657"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${VLeagueMatchBet1Inactive_1}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:06:58.657" endtime="20210823 14:06:58.700"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBetslipActive9}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:58.724" level="INFO">Element 'xpath://div[@class='menu__item-betslip ']/a/div[@class='menu__item--total-bets menu__item--there-are-bets'][text()='9']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:58.701" endtime="20210823 14:06:58.724"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonusProgress9}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:58.745" level="INFO">Element 'xpath://div[@class='bonus-bar__progress-wrapper--bonus-progress']//div[@class='bonus-bar__progress-wrapper--bonus-progress__9']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:58.724" endtime="20210823 14:06:58.745"/>
+</kw>
+<kw name="Element Should Be Visible" library="SeleniumLibrary">
+<arg>${VLeagueBonus%_9}</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<msg timestamp="20210823 14:06:58.768" level="INFO">Element 'xpath://div[@class='bonus-bar__current-multiplier--9']' is displayed.</msg>
+<status status="PASS" starttime="20210823 14:06:58.746" endtime="20210823 14:06:58.768"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${VLeagueSelected}</arg>
+<arg>9</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210823 14:06:58.769" level="INFO">Verifying element 'xpath://div[@class='bonus-bar']//span' contains exact text '9'.</msg>
+<status status="PASS" starttime="20210823 14:06:58.768" endtime="20210823 14:06:58.789"/>
+</kw>
+<kw name="Screenshot" library="Common_keywords">
+<arg>BetLion_Virtual League 9 Bets_Bonus Not Max%.png</arg>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${Path}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20210823 14:06:58.790" endtime="20210823 14:06:58.791"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${filename}.${TYPE OF FILE}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210823 14:06:59.141" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%209%20Bets_Bonus%20Not%20Max%25.png.png"&gt;&lt;img src="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%209%20Bets_Bonus%20Not%20Max%25.png.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210823 14:06:58.791" endtime="20210823 14:06:59.142"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}Screenshot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:06:59.142" endtime="20210823 14:06:59.143"/>
+</kw>
+<status status="PASS" starttime="20210823 14:06:58.789" endtime="20210823 14:06:59.144"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:07:00.147" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:06:59.144" endtime="20210823 14:07:00.147"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20210823 14:07:00.148" endtime="20210823 14:07:00.153"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,1000)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210823 14:07:00.155" level="INFO">Executing JavaScript:
+window.scrollTo(0,1000)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210823 14:07:00.154" endtime="20210823 14:07:00.164"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>${iFrame}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20210823 14:07:00.165" level="INFO">Selecting frame 'xpath://iframe[@id='virtualFrame']'.</msg>
+<status status="PASS" starttime="20210823 14:07:00.164" endtime="20210823 14:07:00.196"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:07:01.197" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:07:00.196" endtime="20210823 14:07:01.197"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueBetslipInputValue0}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:07:01.216" level="INFO">Current page contains element 'xpath://div[@class='bet-form__input-row--input']//input[@value='']'.</msg>
+<status status="PASS" starttime="20210823 14:07:01.198" endtime="20210823 14:07:01.216"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${VLeagueBetslipToWin}</arg>
+<arg>KSh 0.00</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210823 14:07:01.217" level="INFO">Verifying element 'xpath:(//div[@class='bet-form__row--number bet-form__winnings-row'])[1]' contains exact text 'KSh 0.00'.</msg>
+<status status="PASS" starttime="20210823 14:07:01.217" endtime="20210823 14:07:01.243"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${VLeagueBetslipStakeTax}</arg>
+<arg>KSh 0.00</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210823 14:07:01.243" level="INFO">Verifying element 'xpath:(//div[@class='bet-form__row--number bet-form__winnings-row'])[2]' contains exact text 'KSh 0.00'.</msg>
+<status status="PASS" starttime="20210823 14:07:01.243" endtime="20210823 14:07:01.267"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${VLeagueBetslipWinTax}</arg>
+<arg>KSh 0.00</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210823 14:07:01.268" level="INFO">Verifying element 'xpath:(//div[@class='bet-form__row--number bet-form__winnings-row'])[3]' contains exact text 'KSh 0.00'.</msg>
+<status status="PASS" starttime="20210823 14:07:01.267" endtime="20210823 14:07:01.299"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${VLeagueBetslipTotalReturn}</arg>
+<arg>KSh 0.00</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210823 14:07:01.299" level="INFO">Verifying element 'xpath:(//div[@class='bet-form__row--number bet-form__winnings-row'])[4]' contains exact text 'KSh 0.00'.</msg>
+<status status="PASS" starttime="20210823 14:07:01.299" endtime="20210823 14:07:01.330"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueBetslipKSh20}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:07:01.330" endtime="20210823 14:07:01.360"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueBetslipKSh20}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:07:01.362" level="INFO">Clicking element 'xpath://div[@class='bet-form']//div[@class='bet-form__input-row']//div[text()='KSh20']'.</msg>
+<status status="PASS" starttime="20210823 14:07:01.361" endtime="20210823 14:07:01.435"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueBetslipInputValue20}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:07:01.453" level="INFO">Current page contains element 'xpath://div[@class='bet-form__input-row--input']//input[@value='20.00']'.</msg>
+<status status="PASS" starttime="20210823 14:07:01.436" endtime="20210823 14:07:01.453"/>
+</kw>
+<kw name="Screenshot" library="Common_keywords">
+<arg>BetLion_Virtual League To Win_Stake Tax_Winnings Tax_Total Potential Return_Calculated.png</arg>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${Path}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20210823 14:07:01.454" endtime="20210823 14:07:01.455"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${filename}.${TYPE OF FILE}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210823 14:07:01.795" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20To%20Win_Stake%20Tax_Winnings%20Tax_Total%20Potential%20Return_Calculated.png.png"&gt;&lt;img src="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20To%20Win_Stake%20Tax_Winnings%20Tax_Total%20Potential%20Return_Calculated.png.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210823 14:07:01.455" endtime="20210823 14:07:01.795"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}Screenshot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:07:01.795" endtime="20210823 14:07:01.796"/>
+</kw>
+<status status="PASS" starttime="20210823 14:07:01.453" endtime="20210823 14:07:01.797"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueBetNow}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:07:01.810" level="INFO">Current page contains element 'xpath://button[@class='bet-form__submit'][text()='Bet Now']'.</msg>
+<status status="PASS" starttime="20210823 14:07:01.797" endtime="20210823 14:07:01.810"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueBetNow}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:07:01.811" level="INFO">Clicking element 'xpath://button[@class='bet-form__submit'][text()='Bet Now']'.</msg>
+<status status="PASS" starttime="20210823 14:07:01.810" endtime="20210823 14:07:01.888"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:07:02.889" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:07:01.888" endtime="20210823 14:07:02.889"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueBetPlacedSuccessfully}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:07:02.889" endtime="20210823 14:07:03.886"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueBetStatusOpen}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:07:03.899" level="INFO">Current page contains element 'xpath://div[@class='bet-receipt-table__header--status-container bet-receipt-row__status'][text()='Open']'.</msg>
+<status status="PASS" starttime="20210823 14:07:03.886" endtime="20210823 14:07:03.899"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${countBetsReceiptRows}</var>
+<arg>${VLeagueBetsReceiptRows}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20210823 14:07:03.908" level="INFO">${countBetsReceiptRows} = 9</msg>
+<status status="PASS" starttime="20210823 14:07:03.899" endtime="20210823 14:07:03.908"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${countBetslipRows}</arg>
+<arg>9</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20210823 14:07:03.909" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210823 14:07:03.908" endtime="20210823 14:07:03.909"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>BetSlip Row Count = ${countBetsReceiptRows}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:07:03.909" endtime="20210823 14:07:03.909"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:07:04.919" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:07:03.909" endtime="20210823 14:07:04.919"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20210823 14:07:04.919" endtime="20210823 14:07:04.925"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,400)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210823 14:07:04.927" level="INFO">Executing JavaScript:
+window.scrollTo(0,400)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210823 14:07:04.925" endtime="20210823 14:07:04.933"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>${iFrame}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20210823 14:07:04.934" level="INFO">Selecting frame 'xpath://iframe[@id='virtualFrame']'.</msg>
+<status status="PASS" starttime="20210823 14:07:04.934" endtime="20210823 14:07:04.954"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:07:05.961" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:07:04.954" endtime="20210823 14:07:05.961"/>
+</kw>
+<kw name="Element Text Should Not Be" library="SeleniumLibrary">
+<arg>${VLeagueBetsReceiptTotalOdds}</arg>
+<arg>0.00</arg>
+<doc>Verifies that element ``locator`` does not contain exact the text ``not_expected``.</doc>
+<msg timestamp="20210823 14:07:05.961" level="INFO">Verifying element 'xpath:(//div[@class='bet-receipt-table__info--right'][contains(text(),'')])[2]' does not contain exact text '0.00'.</msg>
+<status status="PASS" starttime="20210823 14:07:05.961" endtime="20210823 14:07:05.980"/>
+</kw>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>${VLeagueBetsReceiptTotalStake}</arg>
+<arg>KSh20.00</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20210823 14:07:05.980" level="INFO">Verifying element 'xpath:(//div[@class='bet-receipt-table__info--right'][contains(text(),'')])[3]' contains exact text 'KSh20.00'.</msg>
+<status status="PASS" starttime="20210823 14:07:05.980" endtime="20210823 14:07:05.999"/>
+</kw>
+<kw name="Element Text Should Not Be" library="SeleniumLibrary">
+<arg>${VLeagueBetsTotalPotentialReturn}</arg>
+<arg>0.00</arg>
+<doc>Verifies that element ``locator`` does not contain exact the text ``not_expected``.</doc>
+<msg timestamp="20210823 14:07:06.000" level="INFO">Verifying element 'xpath:(//div[@class='bet-receipt-table__info--right bet-receipt-table__info--winnings'][contains(text(),'')])[3]' does not contain exact text '0.00'.</msg>
+<status status="PASS" starttime="20210823 14:07:05.999" endtime="20210823 14:07:06.018"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueBetsReuseSelections}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:07:06.026" level="INFO">Current page contains element 'xpath://a[@class='bet-receipt__play'][(text()='Reuse Selections')]'.</msg>
+<status status="PASS" starttime="20210823 14:07:06.018" endtime="20210823 14:07:06.026"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${VLeagueBetsReuseSelections}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:07:06.026" endtime="20210823 14:07:06.042"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueBetsBacktoMatches}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:07:06.050" level="INFO">Current page contains element 'xpath://a[@class='bet-receipt__play bet-receipt__play--primary'][(text()='Back to Matches')]'.</msg>
+<status status="PASS" starttime="20210823 14:07:06.042" endtime="20210823 14:07:06.050"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${VLeagueBetsBacktoMatches}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:07:06.050" endtime="20210823 14:07:06.063"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueBetsBetHistory}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:07:06.070" level="INFO">Current page contains element 'xpath://a[@class='history-link'][(text()='Bet History')]'.</msg>
+<status status="PASS" starttime="20210823 14:07:06.063" endtime="20210823 14:07:06.070"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${VLeagueBetsBetHistory}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:07:06.070" endtime="20210823 14:07:06.088"/>
+</kw>
+<kw name="Screenshot" library="Common_keywords">
+<arg>BetLion_Virtual League Bet Placed_Odds Stakes Visible_Reuse Selections Back to Matches Buttons.png</arg>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${Path}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20210823 14:07:06.088" endtime="20210823 14:07:06.089"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${filename}.${TYPE OF FILE}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210823 14:07:06.245" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20Bet%20Placed_Odds%20Stakes%20Visible_Reuse%20Selections%20Back%20to%20Matches%20Buttons.png.png"&gt;&lt;img src="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20Bet%20Placed_Odds%20Stakes%20Visible_Reuse%20Selections%20Back%20to%20Matches%20Buttons.png.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210823 14:07:06.089" endtime="20210823 14:07:06.245"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}Screenshot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:07:06.245" endtime="20210823 14:07:06.245"/>
+</kw>
+<status status="PASS" starttime="20210823 14:07:06.088" endtime="20210823 14:07:06.245"/>
+</kw>
+<status status="PASS" starttime="20210823 14:06:24.613" endtime="20210823 14:07:06.245"/>
+</kw>
+<kw name="Watch Live Virtual Game" library="Live_VirtualGame_keywords">
+<kw name="Log To Console" library="BuiltIn">
+<arg>Watch Live Virtual Game</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:07:06.246" endtime="20210823 14:07:06.246"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:07:07.262" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:07:06.246" endtime="20210823 14:07:07.262"/>
+</kw>
+<kw name="Unselect Frame" library="SeleniumLibrary">
+<doc>Sets the main frame as the current frame.</doc>
+<status status="PASS" starttime="20210823 14:07:07.263" endtime="20210823 14:07:07.268"/>
+</kw>
+<kw name="Execute Javascript" library="SeleniumLibrary">
+<arg>window.scrollTo(0,-400)</arg>
+<doc>Executes the given JavaScript code with possible arguments.</doc>
+<msg timestamp="20210823 14:07:07.269" level="INFO">Executing JavaScript:
+window.scrollTo(0,-400)
+Without any arguments.</msg>
+<status status="PASS" starttime="20210823 14:07:07.268" endtime="20210823 14:07:07.274"/>
+</kw>
+<kw name="Select Frame" library="SeleniumLibrary">
+<arg>${iFrame}</arg>
+<doc>Sets frame identified by ``locator`` as the current frame.</doc>
+<msg timestamp="20210823 14:07:07.274" level="INFO">Selecting frame 'xpath://iframe[@id='virtualFrame']'.</msg>
+<status status="PASS" starttime="20210823 14:07:07.274" endtime="20210823 14:07:07.296"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>1</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:07:08.311" level="INFO">Slept 1 second</msg>
+<status status="PASS" starttime="20210823 14:07:07.297" endtime="20210823 14:07:08.311"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Wait until Live Tab Selected and Active</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:07:08.311" endtime="20210823 14:07:08.312"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueLiveTabActive}</arg>
+<arg>150 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:07:08.313" endtime="20210823 14:09:00.482"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:09:02.488" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210823 14:09:00.482" endtime="20210823 14:09:02.488"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Bet Now visible then removed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:09:02.489" endtime="20210823 14:09:02.490"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" library="SeleniumLibrary">
+<arg>${VLeagueLiveBetNowBtn}</arg>
+<arg>20 seconds</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" starttime="20210823 14:09:02.490" endtime="20210823 14:09:12.559"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>League, Season, Week visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:09:12.560" endtime="20210823 14:09:12.560"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueLiveVEPLLeague}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:09:12.577" level="INFO">Current page contains element 'xpath://div[@class='matches-table__header--competition']//span[contains(text(),'V-EPL')]'.</msg>
+<status status="PASS" starttime="20210823 14:09:12.561" endtime="20210823 14:09:12.577"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueLiveSeason}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:09:12.593" level="INFO">Current page contains element 'xpath://div[@class='matches-table__header--competition']//span[contains(text(),'Season')]'.</msg>
+<status status="PASS" starttime="20210823 14:09:12.577" endtime="20210823 14:09:12.593"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueLiveWeek}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:09:12.610" level="INFO">Current page contains element 'xpath://div[@class='matches-table__header--competition']//span[contains(text(),'Week')]'.</msg>
+<status status="PASS" starttime="20210823 14:09:12.594" endtime="20210823 14:09:12.610"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>1st Half visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:09:12.610" endtime="20210823 14:09:12.611"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueLive1stHalf}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:09:12.628" level="INFO">Current page contains element 'xpath://div[@class='matches-table__header--period--text'][text()='1st Half']'.</msg>
+<status status="PASS" starttime="20210823 14:09:12.611" endtime="20210823 14:09:12.629"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Game Timer = 45 minutes</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:09:12.629" endtime="20210823 14:09:12.630"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueLiveGameTime1stBlock4}</arg>
+<arg>30 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:09:12.630" endtime="20210823 14:09:27.044"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueLiveGameTime2ndBlock5}</arg>
+<arg>30 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:09:27.044" endtime="20210823 14:09:30.083"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>2nd Half visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:09:30.083" endtime="20210823 14:09:30.085"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueLive2ndHalf}</arg>
+<arg>30 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:09:30.085" endtime="20210823 14:09:30.555"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueLive2ndHalf}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:09:30.566" level="INFO">Current page contains element 'xpath://div[@class='matches-table__header--period--text'][text()='2nd Half']'.</msg>
+<status status="PASS" starttime="20210823 14:09:30.556" endtime="20210823 14:09:30.566"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Game Timer = 89 minutes</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:09:30.567" endtime="20210823 14:09:30.568"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueLiveGameTime1stBlock8}</arg>
+<arg>30 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:09:30.568" endtime="20210823 14:09:53.630"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueLiveGameTime2ndBlock9}</arg>
+<arg>30 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:09:53.631" endtime="20210823 14:09:59.265"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>2</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20210823 14:10:01.266" level="INFO">Slept 2 seconds</msg>
+<status status="PASS" starttime="20210823 14:09:59.265" endtime="20210823 14:10:01.266"/>
+</kw>
+<kw name="Screenshot" library="Common_keywords">
+<arg>BetLion_Virtual League Live Game Watched.png</arg>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${Path}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20210823 14:10:01.268" endtime="20210823 14:10:01.269"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${filename}.${TYPE OF FILE}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210823 14:10:01.459" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20Live%20Game%20Watched.png.png"&gt;&lt;img src="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20Live%20Game%20Watched.png.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210823 14:10:01.269" endtime="20210823 14:10:01.459"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}Screenshot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:10:01.460" endtime="20210823 14:10:01.461"/>
+</kw>
+<status status="PASS" starttime="20210823 14:10:01.266" endtime="20210823 14:10:01.461"/>
+</kw>
+<status status="PASS" starttime="20210823 14:07:06.245" endtime="20210823 14:10:01.461"/>
+</kw>
+<kw name="View Virtual League Results" library="ViewResults_keywords">
+<kw name="Log To Console" library="BuiltIn">
+<arg>View Virtual League Results</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:10:01.462" endtime="20210823 14:10:01.462"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Wait until Results Tab Selected and Active</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:10:01.462" endtime="20210823 14:10:01.464"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueResultsTab}</arg>
+<arg>60 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:10:01.464" endtime="20210823 14:10:01.490"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueLiveVEPLLeague}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:10:01.503" level="INFO">Current page contains element 'xpath://div[@class='matches-table__header--competition']//span[contains(text(),'V-EPL')]'.</msg>
+<status status="PASS" starttime="20210823 14:10:01.490" endtime="20210823 14:10:01.503"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueLiveSeason}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:10:01.515" level="INFO">Current page contains element 'xpath://div[@class='matches-table__header--competition']//span[contains(text(),'Season')]'.</msg>
+<status status="PASS" starttime="20210823 14:10:01.503" endtime="20210823 14:10:01.515"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueLiveWeek}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:10:01.526" level="INFO">Current page contains element 'xpath://div[@class='matches-table__header--competition']//span[contains(text(),'Week')]'.</msg>
+<status status="PASS" starttime="20210823 14:10:01.515" endtime="20210823 14:10:01.527"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>FT in space where match time is displayed</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:10:01.527" endtime="20210823 14:10:01.527"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueResultsFT_F}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:10:01.539" level="INFO">Current page contains element 'xpath://div[@class='matches-table__header--game-time']//div[text()='f']'.</msg>
+<status status="PASS" starttime="20210823 14:10:01.528" endtime="20210823 14:10:01.539"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueResultsFT_T}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:10:01.551" level="INFO">Current page contains element 'xpath://div[@class='matches-table__header--game-time']//div[text()='t']'.</msg>
+<status status="PASS" starttime="20210823 14:10:01.539" endtime="20210823 14:10:01.552"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>"Bet Next" button available at right side</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:10:01.552" endtime="20210823 14:10:01.552"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueResultsBetNextBtn}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:10:01.563" level="INFO">Current page contains element 'xpath://div[@class='matches-table__header--bet']//a[text()='Bet Next']'.</msg>
+<status status="PASS" starttime="20210823 14:10:01.553" endtime="20210823 14:10:01.563"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Match table displayed with 9 highlighted matches</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:10:01.563" endtime="20210823 14:10:01.564"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueResultsMatchTableFixtures}</arg>
+<arg>30 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:10:01.564" endtime="20210823 14:10:13.285"/>
+</kw>
+<kw name="Get Element Count" library="SeleniumLibrary">
+<var>${countMatches}</var>
+<arg>${VLeagueResultsMatchTableFixtures}</arg>
+<doc>Returns the number of elements matching ``locator``.</doc>
+<msg timestamp="20210823 14:10:13.294" level="INFO">${countMatches} = 9</msg>
+<status status="PASS" starttime="20210823 14:10:13.285" endtime="20210823 14:10:13.294"/>
+</kw>
+<kw name="Should Be Equal As Integers" library="BuiltIn">
+<arg>${countMatches}</arg>
+<arg>9</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<msg timestamp="20210823 14:10:13.295" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;type 'unicode'&gt;</msg>
+<status status="PASS" starttime="20210823 14:10:13.295" endtime="20210823 14:10:13.295"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Match Table Count = ${countMatches}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:10:13.295" endtime="20210823 14:10:13.296"/>
+</kw>
+<kw name="Screenshot" library="Common_keywords">
+<arg>BetLion_Virtual League Results Tab.png</arg>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${Path}</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="PASS" starttime="20210823 14:10:13.297" endtime="20210823 14:10:13.298"/>
+</kw>
+<kw name="Capture Page Screenshot" library="SeleniumLibrary">
+<arg>${filename}.${TYPE OF FILE}</arg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<msg timestamp="20210823 14:10:13.567" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20Results%20Tab.png.png"&gt;&lt;img src="Screenshots/IG_VirtualLeague/2021-08-23%2014-06-11/BetLion_Virtual%20League%20Results%20Tab.png.png" width="800px"&gt;&lt;/a&gt;</msg>
+<status status="PASS" starttime="20210823 14:10:13.298" endtime="20210823 14:10:13.568"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${\n}Screenshot</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:10:13.568" endtime="20210823 14:10:13.569"/>
+</kw>
+<status status="PASS" starttime="20210823 14:10:13.296" endtime="20210823 14:10:13.569"/>
+</kw>
+<status status="PASS" starttime="20210823 14:10:01.461" endtime="20210823 14:10:13.569"/>
+</kw>
+<kw name="View Virtual League Bet History" library="ViewBetHistory_keywords">
+<kw name="View Virtual League Table" library="ViewBetHistory_keywords">
+<kw name="Log To Console" library="BuiltIn">
+<arg>View Virtual League Bet History</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:10:13.572" endtime="20210823 14:10:13.572"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Click Table Tab</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:10:13.572" endtime="20210823 14:10:13.574"/>
+</kw>
+<kw name="Element Should Be Enabled" library="SeleniumLibrary">
+<arg>${VLeagueTableTab}</arg>
+<doc>Verifies that element identified by ``locator`` is enabled.</doc>
+<status status="PASS" starttime="20210823 14:10:13.574" endtime="20210823 14:10:13.619"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>${VLeagueTableTab}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20210823 14:10:13.620" level="INFO">Clicking element 'xpath://a[text()='Table']'.</msg>
+<status status="PASS" starttime="20210823 14:10:13.619" endtime="20210823 14:10:13.752"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueTableTabActive}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:10:13.765" level="INFO">Current page contains element 'xpath://div[@class='menu__item menu__item--tables']//a[@class='active'][text()='Table']'.</msg>
+<status status="PASS" starttime="20210823 14:10:13.752" endtime="20210823 14:10:13.766"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<arg>${VLeagueTableVEPLArsenal}</arg>
+<arg>10 seconds</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" starttime="20210823 14:10:13.766" endtime="20210823 14:10:14.279"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueTableVEPLArsenal}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:10:14.288" level="INFO">Current page contains element 'xpath://div[@class='league-table']/div[@class='league-table__row']/div[@class='league-table__col league-table__col--team-name'][text()='Arsenal']'.</msg>
+<status status="PASS" starttime="20210823 14:10:14.279" endtime="20210823 14:10:14.288"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueTableVEPLChelsea}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:10:14.300" level="INFO">Current page contains element 'xpath://div[@class='league-table']/div[@class='league-table__row']/div[@class='league-table__col league-table__col--team-name'][text()='Chelsea']'.</msg>
+<status status="PASS" starttime="20210823 14:10:14.288" endtime="20210823 14:10:14.300"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>League, Season, Week visible</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:10:14.300" endtime="20210823 14:10:14.301"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueTableVEPLLeague}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:10:14.314" level="INFO">Current page contains element 'xpath://div[@class='league-table__header-col league-table__header-col--title'][contains(text(),'V-EPL')]'.</msg>
+<status status="PASS" starttime="20210823 14:10:14.301" endtime="20210823 14:10:14.314"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueTableSeason}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:10:14.327" level="INFO">Current page contains element 'xpath://div[@class='league-table__header-col league-table__header-col--title'][contains(text(),'Season')]'.</msg>
+<status status="PASS" starttime="20210823 14:10:14.315" endtime="20210823 14:10:14.327"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueTableWeek}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:10:14.339" level="INFO">Current page contains element 'xpath://div[@class='league-table__header-col league-table__header-col--title'][contains(text(),'Week')]'.</msg>
+<status status="PASS" starttime="20210823 14:10:14.327" endtime="20210823 14:10:14.339"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>Wins, draws, losses and points in header of table</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:10:14.339" endtime="20210823 14:10:14.340"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueTableHeaderW}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:10:14.352" level="INFO">Current page contains element 'xpath://div[@class='league-table__header league-table__row']/div[text()='W']'.</msg>
+<status status="PASS" starttime="20210823 14:10:14.340" endtime="20210823 14:10:14.352"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueTableHeaderD}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:10:14.364" level="INFO">Current page contains element 'xpath://div[@class='league-table__header league-table__row']/div[text()='D']'.</msg>
+<status status="PASS" starttime="20210823 14:10:14.352" endtime="20210823 14:10:14.364"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueTableHeaderL}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:10:14.376" level="INFO">Current page contains element 'xpath://div[@class='league-table__header league-table__row']/div[text()='L']'.</msg>
+<status status="PASS" starttime="20210823 14:10:14.365" endtime="20210823 14:10:14.376"/>
+</kw>
+<kw name="Page Should Contain Element" library="SeleniumLibrary">
+<arg>${VLeagueTableHeaderPTS}</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<msg timestamp="20210823 14:10:14.388" level="INFO">Current page contains element 'xpath://div[@class='league-table__header league-table__row']/div[text()='PTS']'.</msg>
+<status status="PASS" starttime="20210823 14:10:14.376" endtime="20210823 14:10:14.388"/>
+</kw>
+<status status="PASS" starttime="20210823 14:10:13.571" endtime="20210823 14:10:14.389"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>View Virtual League Bet History</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20210823 14:10:14.389" endtime="20210823 14:10:14.389"/>
+</kw>
+<status status="PASS" starttime="20210823 14:10:13.570" endtime="20210823 14:10:14.390"/>
 </kw>
 <tag>behavior-driven</tag>
-<status status="FAIL" starttime="20210813 18:01:26.654" endtime="20210813 18:01:40.692">Element with locator 'xpath://div[@class='BetLion-Lite-Mobile']/div/div[2]/div/div[3]/a/img' not found.</status>
+<status status="PASS" starttime="20210823 14:06:08.176" endtime="20210823 14:10:14.390"/>
 </test>
 <doc>Login to Virtual League</doc>
-<status status="FAIL" starttime="20210813 18:01:26.468" endtime="20210813 18:01:40.694"/>
+<status status="PASS" starttime="20210823 14:06:08.023" endtime="20210823 14:10:14.392"/>
 </suite>
 <statistics>
 <total>
-<stat pass="0" fail="1" skip="0">All Tests</stat>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="0" fail="1" skip="0">behavior-driven</stat>
+<stat pass="1" fail="0" skip="0">behavior-driven</stat>
 </tag>
 <suite>
-<stat pass="0" fail="1" skip="0" id="s1" name="VLeague Fixtures AutoStake">VLeague Fixtures AutoStake</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="VLeague Fixtures AutoStake TC">VLeague Fixtures AutoStake TC</stat>
 </suite>
 </statistics>
 <errors>
