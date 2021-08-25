@@ -13,7 +13,8 @@ Force Tags          behavior-driven
 Fixtures with Autostake
     Navigate to Virtual League
     Login to Virtual League
-    Select Fixtures with Auto Stake
+    Select Fixtures with Auto Stake_V-EPL
     Watch Live Virtual Game
     View Virtual League Results
     View Virtual League Bet History
+    Select Fixtures with Auto Stake_V-La Liga
