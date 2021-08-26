@@ -18,3 +18,4 @@ Fixtures with Autostake
     View Virtual League Results
     View Virtual League Bet History
     Select Fixtures with Auto Stake_V-La Liga
+    Select Fixtures with Auto Stake_V-African Nations
