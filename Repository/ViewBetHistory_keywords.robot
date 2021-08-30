@@ -24,6 +24,7 @@ View Virtual League Table
     Page Should Contain Element         ${VLeagueTableTabActive}
 
     ##Table shows all teams
+    Log to Console      Table shows all teams
     # V-EPL Teams Visible on page
     Wait Until Element Is Visible       ${VLeagueTableVEPLArsenal}           10 seconds
     Page Should Contain Element         ${VLeagueTableVEPLArsenal}
@@ -51,7 +52,8 @@ View Virtual League Bet History
 
     Log to Console      View Virtual League Bet History
 
-    # Scroll to bottom of page
+    # Scroll Down
+    Log to Console      Scroll Down
     Sleep   1
     Unselect Frame
     Execute JavaScript    window.scrollTo(0,300)
@@ -59,12 +61,14 @@ View Virtual League Bet History
     Sleep   1
 
     # Click Bet History
-    Wait Until Element Is Visible       ${VLeagueBetHistory}           10 seconds
+    Log to Console      Click Bet History
+    Wait Until Element Is Visible       ${VLeagueBetHistory}                10 seconds
     Click Element                       ${VLeagueBetHistory}
 
     ## Validations
+    Log to Console      Validations - Header_Bet Table_Accumulator_Table Result = Lost
         #Header
-    Wait Until Element Is Visible       ${VLeagueBetHistoryHeader}     10 seconds
+    Wait Until Element Is Visible       ${VLeagueBetHistoryHeader}          10 seconds
     Screenshot      BetLion_View Virtual League Bet History.png
 
     Page Should Contain Element         ${VLeagueBetHistoryHeader}
@@ -83,6 +87,7 @@ View Virtual League Bet History
     Log to Console      Bet History Count = ${countBetHistory}
 
     # Scroll Down
+    Log to Console      Scroll Down
     Sleep   1
     Unselect Frame
     Execute JavaScript    window.scrollTo(0,400)
@@ -90,19 +95,23 @@ View Virtual League Bet History
     Sleep   1
 
         #Total odds, stake and potential return displayed
+    Log to Console      Total odds, stake and potential return displayed
     Wait Until Element Is Visible       ${VLeagueBetHistoryTableTotalOdds}            10 seconds
     Page Should Contain Element         ${VLeagueBetHistoryTableTotalOdds}
     Page Should Contain Element         ${VLeagueBetHistoryTableTotalStake}
     Page Should Contain Element         ${VLeagueBetHistoryTablePotReturn}
 
         #Potential return set to 0 if loss
+    Log to Console      Potential return set to 0 if loss
     Page Should Contain Element         ${VLeagueBetHistoryTablePotReturnLost_0}
 
         #Next button available
+    Log to Console      Next button available
     Page Should Contain Element         ${VLeagueBetHistoryNextBtn}
     Element Should Be Enabled           ${VLeagueBetHistoryNextBtn}
 
     # Scroll to bottom of page
+    Log to Console      Scroll to bottom of page
     Sleep   1
     Unselect Frame
     Execute JavaScript    window.scrollTo(0,1000)
@@ -110,11 +119,13 @@ View Virtual League Bet History
     Sleep   1
 
     # Next Button
-    Wait Until Element Is Visible       ${VLeagueBetHistoryNextBtn}           10 seconds
+    Log to Console      Next Button
+    Wait Until Element Is Visible       ${VLeagueBetHistoryNextBtn}         10 seconds
     Click Element                       ${VLeagueBetHistoryNextBtn}
     Sleep   3
 
     # Scroll to bottom of page
+    Log to Console      Scroll to bottom of page
     Sleep   1
     Unselect Frame
     Execute JavaScript    window.scrollTo(0,1400)
@@ -122,17 +133,20 @@ View Virtual League Bet History
     Sleep   1
 
     #Previous / Next buttons available
+    Log to Console      Previous / Next buttons available
     Page Should Contain Element         ${VLeagueBetHistoryNextBtn}
     Page Should Contain Element         ${VLeagueBetHistoryPreviousBtn}
     Element Should Be Enabled           ${VLeagueBetHistoryNextBtn}
     Element Should Be Enabled           ${VLeagueBetHistoryPreviousBtn}
 
     # Next Button
-    Wait Until Element Is Visible       ${VLeagueBetHistoryNextBtn}           10 seconds
+    Log to Console      Next Button
+    Wait Until Element Is Visible       ${VLeagueBetHistoryNextBtn}         10 seconds
     Click Element                       ${VLeagueBetHistoryNextBtn}
     Sleep   3
 
     # Scroll to bottom of page
+    Log to Console      Scroll to bottom of page
     Sleep   1
     Unselect Frame
     Execute JavaScript    window.scrollTo(0,1000)
@@ -140,11 +154,13 @@ View Virtual League Bet History
     Sleep   1
 
     #Previous button
-    Wait Until Element Is Visible       ${VLeagueBetHistoryPreviousBtn}           10 seconds
+    Log to Console      Previous button
+    Wait Until Element Is Visible       ${VLeagueBetHistoryPreviousBtn}     10 seconds
     Click Element                       ${VLeagueBetHistoryPreviousBtn}
     Sleep   3
 
     # Scroll to top of page
+    Log to Console      Scroll to top of page
     Sleep   1
     Unselect Frame
     Execute JavaScript    window.scrollTo(0,-1400)

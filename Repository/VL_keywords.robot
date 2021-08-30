@@ -32,12 +32,14 @@ Login to Virtual League
     Sleep       1
 
     # Click Allow Notifications
+    Log to Console      Click Allow Notifications
     Unselect Frame
     Wait Until Element Is Enabled       ${AllowNotificationsBtnXpath}   10 seconds
     Click Element                       ${AllowNotificationsBtnXpath}
     Sleep       1
 
     # Welcome Message
+    Log to Console      Welcome Message
     Select Frame                        ${iFrame}
     Wait Until Element Is Enabled       ${WelcomePlayNowBtn}            10 seconds
     Click Element                       ${WelcomePlayNowBtn}
@@ -45,16 +47,19 @@ Login to Virtual League
     Unselect Frame
 
     # Click Home Login Button
+    Log to Console      Click Home Login Button
     Click Element                       ${HomeLoginBtnXpath}
     Sleep       1
     Wait Until Element Is Enabled       ${MobileNoID}                   10 seconds
 
     # Login Blank Mobile Number and PIN
+    Log to Console      Login Blank Mobile Number and PIN
     Click Element                       ${LoginBtnXpath}
     Sleep       1
     Page Should Contain Element          ${BlankCredentialsMsg}
 
     # Enter Mobile Number Only
+    Log to Console      Enter Mobile Number Only
     Input Text                          ${MobileNoID}                   742343912
     Click Element                       ${LoginBtnXpath}
     Sleep       1
@@ -62,6 +67,7 @@ Login to Virtual League
     Clear Element Text                  ${MobileNoID}
 
     # Enter PIN Only
+    Log to Console      Enter PIN Only
     Input Text                          ${PinID}                        1111
     Click Element                       ${LoginBtnXpath}
     Sleep       1
@@ -69,10 +75,12 @@ Login to Virtual League
     Clear Element Text                  ${PinID}
 
     # Enter Invalid Mobile Number and PIN
+    Log to Console      Enter Invalid Mobile Number and PIN
     Input Text                          ${MobileNoID}                   881659001
     Input Text                          ${PinID}                        9865
 
     # Click Login Button
+    Log to Console      Click Login Button
     Click Element                       ${LoginBtnXpath}
     Sleep       1
     Page Should Contain Element          ${InvalidCredentialsMsg}
@@ -82,10 +90,12 @@ Login to Virtual League
     Sleep       1
 
     # Enter Valid Mobile Number and PIN
+    Log to Console      Enter Valid Mobile Number and PIN
     Input Text                          ${MobileNoID}                   742343912
     Input Text                          ${PinID}                        1111
 
     # Click Login Button
+    Log to Console      Click Login Button
     Click Element                       ${LoginBtnXpath}
     Sleep       1
 
@@ -110,6 +120,7 @@ Switch Between Leagues
 
     # All Competitions Shown
     # Competition Selector - V-EPL
+    Log to Console      Competition Selector - V-EPL
     Click Element                       ${VLeagueCompSelectorDD}
     Wait Until Element Is Visible       ${VLeagueCompSelectorDDActive}  2 seconds
     Page Should Contain Element         ${VLeagueCompSelectorDDActive}
@@ -133,29 +144,31 @@ Switch Between Leagues
     Sleep       1
     #Validations
         # V-EPL Teams Visible on page
-    Wait Until Element Is Visible       ${VLeagueCompVEPLArsenal}           10 seconds
+    Wait Until Element Is Visible       ${VLeagueCompVEPLArsenal}       10 seconds
     Page Should Contain Element         ${VLeagueCompVEPLArsenal}
     Page Should Contain Element         ${VLeagueCompVEPLChelsea}
 
     Screenshot      BetLion_Virtual League V-EPL Teams Visible on page.png
 
     # Competition Selector - V-La Liga
+    Log to Console      Competition Selector - V-La Liga
     Click Element                       ${VLeagueCompSelectorDD}
     Wait Until Element Is Visible       ${VLeagueCompSelectorDDActive}  2 seconds
     Page Should Contain Element         ${VLeagueCompSelectorDDActive}
     Sleep       1
-    Wait Until Element Is Visible       ${VLeagueCompVLaLiga}               10 seconds
+    Wait Until Element Is Visible       ${VLeagueCompVLaLiga}           10 seconds
     Click Element                       ${VLeagueCompVLaLiga}
     Sleep       1
     #Validations
         # V-La Liga Teams Visible on page
-    Wait Until Element Is Visible       ${VLeagueCompVLaLigaAtleticoMadrid}           10 seconds
+    Wait Until Element Is Visible       ${VLeagueCompVLaLigaAtleticoMadrid}     10 seconds
     Page Should Contain Element         ${VLeagueCompVLaLigaAtleticoMadrid}
     Page Should Contain Element         ${VLeagueCompVLaLigaBarcelona}
 
     Screenshot      BetLion_Virtual League V-La Liga Teams Visible on page.png
 
     # Competition Selector - V-African Nations
+    Log to Console      Competition Selector - V-African Nations
     Click Element                       ${VLeagueCompSelectorDD}
     # V-La Liga Selected
     Page Should Contain Element         ${VLeagueCompVLaLigaSelected}
@@ -165,13 +178,14 @@ Switch Between Leagues
     Sleep       1
     #Validations
         # V-African Nations Teams Visible on page
-    Wait Until Element Is Visible       ${VLeagueCompVAfricanNationsSouthAfrica}           10 seconds
+    Wait Until Element Is Visible       ${VLeagueCompVAfricanNationsSouthAfrica}    10 seconds
     Page Should Contain Element         ${VLeagueCompVAfricanNationsSouthAfrica}
     Page Should Contain Element         ${VLeagueCompVAfricanNationsCameroon}
 
     Screenshot      BetLion_Virtual League V-African Nations Teams Visible on page.png
 
     # Competition Selector - V-World League
+    Log to Console      Competition Selector - V-World League
     Click Element                       ${VLeagueCompSelectorDD}
     # V-World League Selected
     Page Should Contain Element         ${VLeagueCompVAfricanNationsSelected}
@@ -181,7 +195,7 @@ Switch Between Leagues
     Sleep       1
     #Validations
         # V-World League Teams Visible on page
-    Wait Until Element Is Visible       ${VLeagueCompVWorldLeagueEngland}           10 seconds
+    Wait Until Element Is Visible       ${VLeagueCompVWorldLeagueEngland}   10 seconds
     Page Should Contain Element         ${VLeagueCompVWorldLeagueEngland}
     Page Should Contain Element         ${VLeagueCompVWorldLeagueBelgium}
 

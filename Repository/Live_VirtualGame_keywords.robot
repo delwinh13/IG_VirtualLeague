@@ -1,15 +1,12 @@
 *** Settings ***
 Documentation    Watch Live Virtual Game
 Library     SeleniumLibrary
-#Library     XML
 Library     String
 Library     Process
-#Library     SwingLibrary
 Resource    ../Resources/VL_vars.robot
 Resource    ../Repository/Common_keywords.robot
 Resource    ../Repository/VL_keywords.robot
 Library     DateTime
-
 
 *** Keywords ***
 #*********************************************** WatchLiveVirtualGame *****************************************************
@@ -18,6 +15,7 @@ Watch Live Virtual Game
     Log to Console      Watch Live Virtual Game
 
     # Scroll to the top of the page
+    Log to Console      Scroll to the top of the page
     Sleep   1
     Unselect Frame
     Execute JavaScript    window.scrollTo(0,-400)
@@ -45,8 +43,8 @@ Watch Live Virtual Game
 
     # Game Timer = 45 minutes
     Log to Console      Game Timer = 45 minutes
-    Wait Until Element Is Visible       ${VLeagueLiveGameTime1stBlock4}                 30 seconds
-    Wait Until Element Is Visible       ${VLeagueLiveGameTime2ndBlock5}                 30 seconds
+    Wait Until Element Is Visible       ${VLeagueLiveGameTime1stBlock4}         30 seconds
+    Wait Until Element Is Visible       ${VLeagueLiveGameTime2ndBlock5}         30 seconds
 
     # 2nd Half visible
     Log to Console      2nd Half visible
@@ -55,8 +53,8 @@ Watch Live Virtual Game
 
     # Game Timer = 89 minutes
     Log to Console      Game Timer = 89 minutes
-    Wait Until Element Is Visible       ${VLeagueLiveGameTime1stBlock8}                 30 seconds
-    Wait Until Element Is Visible       ${VLeagueLiveGameTime2ndBlock9}                 30 seconds
+    Wait Until Element Is Visible       ${VLeagueLiveGameTime1stBlock8}         30 seconds
+    Wait Until Element Is Visible       ${VLeagueLiveGameTime2ndBlock9}         30 seconds
     Sleep   2
 
     Screenshot      BetLion_Virtual League Live Game Watched.png

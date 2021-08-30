@@ -19,9 +19,10 @@ View Virtual League Results
 
     # Wait until Results Tab Selected and Active
     Log to Console      Wait until Results Tab Selected and Active
-    Wait Until Element Is Visible       ${VLeagueResultsTab}                    60 seconds
+    Wait Until Element Is Visible       ${VLeagueResultsTab}                            60 seconds
 
     # League, Season, Week visible
+    Log to Console      League, Season, Week visible
     Page Should Contain Element         ${VLeagueLiveVEPLLeague}
     Page Should Contain Element         ${VLeagueLiveSeason}
     Page Should Contain Element         ${VLeagueLiveWeek}
@@ -37,7 +38,7 @@ View Virtual League Results
 
     # Match table displayed with 9 highlighted matches
     Log to Console      Match table displayed with 9 highlighted matches
-    Wait Until Element Is Visible       ${VLeagueResultsMatchTableFixtures}            30 seconds
+    Wait Until Element Is Visible       ${VLeagueResultsMatchTableFixtures}             30 seconds
     ${countMatches}=   Get Element Count       ${VLeagueResultsMatchTableFixtures}
     Should Be Equal As Integers         ${countMatches}    9
     Log to Console      Match Table Count = ${countMatches}

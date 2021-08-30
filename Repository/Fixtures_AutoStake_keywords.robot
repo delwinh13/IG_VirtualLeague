@@ -23,6 +23,7 @@ Select Fixtures with Auto Stake_V-EPL
     Sleep       1
 
     #Validations
+    Log to Console      Validations
         # Next Start Timer
     Wait Until Element Is Visible       ${VLeagueNextStartTimer}                10 seconds
     Element Should Be Enabled           ${VLeagueNextStartTimer}
@@ -62,6 +63,7 @@ Select Fixtures with Auto Stake_V-EPL
     Element Should Be Enabled           ${VLeagueDCMenuItem}
 
         # Match table displayed with 10 matches
+    Log to Console      Match table displayed with 10 matches
     ${countMatches}=   Get Element Count       ${VLeagueMatchTableRows}
     Should Be Equal As Integers         ${countMatches}    10
     Log to Console      Match Table Count = ${countMatches}
@@ -71,6 +73,7 @@ Select Fixtures with Auto Stake_V-EPL
     Switch Between Leagues
 
     # Competition Selector - V-EPL
+    Log to Console      Competition Selector - V-EPL
     Click Element                       ${VLeagueCompSelectorDD}
     Sleep       1
     Wait Until Element Is Visible       ${VLeagueCompVEPL}                10 seconds
@@ -78,6 +81,7 @@ Select Fixtures with Auto Stake_V-EPL
     Sleep       1
 
     # Matches
+    Log to Console      Matches
     Click Element                       ${VLeagueMatchesTab}
     Element Should Be Enabled           ${VLeagueMatchesTab}
 
@@ -89,6 +93,7 @@ Select Fixtures with Auto Stake_V-EPL
     Element Should Be Visible           ${VLeagueBonus%_0}
 
     #Select Fixtures
+    Log to Console      Select Fixtures - Matches 1 - 10
     # Match #1
     Wait Until Element Is Visible       ${VLeagueMatchBet1Inactive_1}                10 seconds
     Mouse Over                          ${VLeagueMatchBet1Inactive_1}
@@ -253,17 +258,20 @@ Select Fixtures with Auto Stake_V-EPL
     Sleep   1
 
     # BetSlip Row displayed with 10 matches
+    Log to Console      BetSlip Row displayed with 10 matches
     ${countBetslipRows}=   Get Element Count       ${VLeagueBetslipRows}
     Should Be Equal As Integers         ${countBetslipRows}     10
     Log to Console      BetSlip Row Count = ${countBetslipRows}
 
     ##Click 'x' on a fixture in the betslip
     # Deselect Row 1 Bet
+    Log to Console      Deselect Row 1 Bet
     Wait Until Element Is Visible       ${VLeagueBetslipBetRow1Cancel}                10 seconds
     Click Element                       ${VLeagueBetslipBetRow1Cancel}
     Sleep   1
 
     # BetSlip Row displayed with 9 matches
+    Log to Console      BetSlip Row displayed with 9 matches
     ${countBetslipRows}=   Get Element Count       ${VLeagueBetslipRows}
     Should Be Equal As Integers         ${countBetslipRows}     9
     Log to Console      BetSlip Row Count = ${countBetslipRows}
@@ -287,6 +295,7 @@ Select Fixtures with Auto Stake_V-EPL
     Screenshot      BetLion_Virtual League 9 Bets_Bonus Not Max%.png
 
     ##Select an autostake
+    Log to Console      Select an autostake
     Sleep   1
     Unselect Frame
     Execute JavaScript    window.scrollTo(0,1000)
@@ -294,6 +303,7 @@ Select Fixtures with Auto Stake_V-EPL
     Sleep   1
 
     # Select KSh20 AutoStake
+    Log to Console      Select KSh20 AutoStake
     # KSh Total Empty
     Page Should Contain Element         ${VLeagueBetslipInputValue0}
     # To Win / Stake Tax / Winnings Tax / Total Potential Return = 0
@@ -314,6 +324,7 @@ Select Fixtures with Auto Stake_V-EPL
     Screenshot      BetLion_Virtual League To Win_Stake Tax_Winnings Tax_Total Potential Return_Calculated.png
 
     ##Click Bet Now
+    Log to Console      Click Bet Now
     Page Should Contain Element         ${VLeagueBetNow}
     Click Element                       ${VLeagueBetNow}
     Sleep   1
@@ -333,11 +344,13 @@ Select Fixtures with Auto Stake_V-EPL
     Sleep   1
 
     # Stake and outcome displayed
+    Log to Console      Stake and outcome displayed
     SeleniumLibrary.Element Text Should Not Be          ${VLeagueBetsReceiptTotalOdds}          0.00
     SeleniumLibrary.Element Text Should Be              ${VLeagueBetsReceiptTotalStake}         KSh20.00
     SeleniumLibrary.Element Text Should Not Be          ${VLeagueBetsTotalPotentialReturn}      0.00
 
     ##Option to play more or view history
+    Log to Console      Option to play more or view history
     # Reuse Selections
     Page Should Contain Element         ${VLeagueBetsReuseSelections}
     Element Should Be Enabled           ${VLeagueBetsReuseSelections}
@@ -406,6 +419,7 @@ Select Fixtures with Auto Stake_V-La Liga
     Element Should Be Enabled           ${VLeagueDCMenuItem}
 
         # Match table displayed with 10 matches
+    Log to Console      Match table displayed with 10 matches
     ${countMatches}=   Get Element Count       ${VLeagueMatchTableRows}
     Should Be Equal As Integers         ${countMatches}    10
     Log to Console      Match Table Count = ${countMatches}
@@ -413,6 +427,7 @@ Select Fixtures with Auto Stake_V-La Liga
     Screenshot      BetLion_Virtual League Landing Validations.png
 
     # Competition Selector - V-La Liga
+    Log to Console      Competition Selector - V-La Liga
     Click Element                       ${VLeagueCompSelectorDD}
     Wait Until Element Is Visible       ${VLeagueCompSelectorDDActive}  2 seconds
     Page Should Contain Element         ${VLeagueCompSelectorDDActive}
@@ -429,6 +444,7 @@ Select Fixtures with Auto Stake_V-La Liga
     Screenshot      BetLion_Virtual League V-La Liga Teams Visible on page.png
 
     # Matches
+    Log to Console      Matches
     Click Element                       ${VLeagueMatchesTab}
     Element Should Be Enabled           ${VLeagueMatchesTab}
 
@@ -440,6 +456,7 @@ Select Fixtures with Auto Stake_V-La Liga
     Element Should Be Visible           ${VLeagueBonus%_0}
 
     #Select Fixtures
+    Log to Console      Select Fixtures - 1-10 Matches
     # Match #1
     Wait Until Element Is Visible       ${VLeagueMatchBet1Inactive_2}                10 seconds
     Mouse Over                          ${VLeagueMatchBet1Inactive_2}
@@ -604,17 +621,20 @@ Select Fixtures with Auto Stake_V-La Liga
     Sleep   1
 
     # BetSlip Row displayed with 10 matches
+    Log to Console      BetSlip Row displayed with 10 matches
     ${countBetslipRows}=   Get Element Count       ${VLeagueBetslipRows}
     Should Be Equal As Integers         ${countBetslipRows}     10
     Log to Console      BetSlip Row Count = ${countBetslipRows}
 
     ##Click 'x' on a fixture in the betslip
+    Log to Console      Click 'x' on a fixture in the betslip
     # Deselect Row 1 Bet
     Wait Until Element Is Visible       ${VLeagueBetslipBetRow1Cancel}                10 seconds
     Click Element                       ${VLeagueBetslipBetRow1Cancel}
     Sleep   1
 
     # BetSlip Row displayed with 9 matches
+    Log to Console      BetSlip Row displayed with 9 matches
     ${countBetslipRows}=   Get Element Count       ${VLeagueBetslipRows}
     Should Be Equal As Integers         ${countBetslipRows}     9
     Log to Console      BetSlip Row Count = ${countBetslipRows}
@@ -645,6 +665,7 @@ Select Fixtures with Auto Stake_V-La Liga
     Sleep   1
 
     # Select KSh100 AutoStake
+    Log to Console      Select KSh100 AutoStake
     # KSh Total Empty
     Page Should Contain Element         ${VLeagueBetslipInputValue0}
     # To Win / Stake Tax / Winnings Tax / Total Potential Return = 0
@@ -665,6 +686,7 @@ Select Fixtures with Auto Stake_V-La Liga
     Screenshot      BetLion_Virtual League To Win_Stake Tax_Winnings Tax_Total Potential Return_Calculated.png
 
     ##Click Bet Now
+    Log to Console      Click Bet Now
     Page Should Contain Element         ${VLeagueBetNow}
     Click Element                       ${VLeagueBetNow}
     Sleep   1
@@ -684,11 +706,13 @@ Select Fixtures with Auto Stake_V-La Liga
     Sleep   1
 
     # Stake and outcome displayed
+    Log to Console      Stake and outcome displayed
     SeleniumLibrary.Element Text Should Not Be          ${VLeagueBetsReceiptTotalOdds}          0.00
     SeleniumLibrary.Element Text Should Be              ${VLeagueBetsReceiptTotalStake}         KSh100.00
     SeleniumLibrary.Element Text Should Not Be          ${VLeagueBetsTotalPotentialReturn}      0.00
 
     ##Option to play more or view history
+    Log to Console      Option to play more or view history
     # Reuse Selections
     Page Should Contain Element         ${VLeagueBetsReuseSelections}
     Element Should Be Enabled           ${VLeagueBetsReuseSelections}
@@ -727,6 +751,7 @@ Select Fixtures with Auto Stake_V-La Liga
     Page Should Contain Element         ${VLeagueLive1stHalf}
 
     # V-La Liga Teams Visible on page
+    Log to Console      V-La Liga Teams Visible on page
     Wait Until Element Is Visible       ${VLeagueLiveVLaLigaAtleticoMadrid}           10 seconds
     Page Should Contain Element         ${VLeagueLiveVLaLigaAtleticoMadrid}
     Page Should Contain Element         ${VLeagueLiveVLaLigaBarcelona}
@@ -788,6 +813,7 @@ Select Fixtures with Auto Stake_V-African Nations
     Element Should Be Enabled           ${VLeagueDCMenuItem}
 
         # Match table displayed with 10 matches
+    Log to Console      Match table displayed with 10 matches
     ${countMatches}=   Get Element Count       ${VLeagueMatchTableRows}
     Should Be Equal As Integers         ${countMatches}    10
     Log to Console      Match Table Count = ${countMatches}
@@ -795,6 +821,7 @@ Select Fixtures with Auto Stake_V-African Nations
     Screenshot      BetLion_Virtual League Landing Validations.png
 
     # Competition Selector - V-African Nations
+    Log to Console      Competition Selector - V-African Nations
     Click Element                       ${VLeagueCompSelectorDD}
     Wait Until Element Is Visible       ${VLeagueCompSelectorDDActive}  2 seconds
     Page Should Contain Element         ${VLeagueCompSelectorDDActive}
@@ -811,6 +838,7 @@ Select Fixtures with Auto Stake_V-African Nations
     Screenshot      BetLion_Virtual League V-African Nations Teams Visible on page.png
 
     # Matches
+    Log to Console      Matches
     Click Element                       ${VLeagueMatchesTab}
     Element Should Be Enabled           ${VLeagueMatchesTab}
 
@@ -822,6 +850,7 @@ Select Fixtures with Auto Stake_V-African Nations
     Element Should Be Visible           ${VLeagueBonus%_0}
 
     #Select Fixtures
+    Log to Console      Select Fixtures - 1 - 10 Matches
     # Match #1
     Wait Until Element Is Visible       ${VLeagueMatchBet1Inactive_1}                10 seconds
     Mouse Over                          ${VLeagueMatchBet1Inactive_1}
@@ -986,17 +1015,20 @@ Select Fixtures with Auto Stake_V-African Nations
     Sleep   1
 
     # BetSlip Row displayed with 10 matches
+    Log to Console      BetSlip Row displayed with 10 matches
     ${countBetslipRows}=   Get Element Count       ${VLeagueBetslipRows}
     Should Be Equal As Integers         ${countBetslipRows}     10
     Log to Console      BetSlip Row Count = ${countBetslipRows}
 
     ##Click 'x' on a fixture in the betslip
+    Log to Console      Click 'x' on a fixture in the betslip
     # Deselect Row 1 Bet
     Wait Until Element Is Visible       ${VLeagueBetslipBetRow1Cancel}                10 seconds
     Click Element                       ${VLeagueBetslipBetRow1Cancel}
     Sleep   1
 
     # BetSlip Row displayed with 9 matches
+    Log to Console      BetSlip Row displayed with 9 matches
     ${countBetslipRows}=   Get Element Count       ${VLeagueBetslipRows}
     Should Be Equal As Integers         ${countBetslipRows}     9
     Log to Console      BetSlip Row Count = ${countBetslipRows}
@@ -1020,6 +1052,7 @@ Select Fixtures with Auto Stake_V-African Nations
     Screenshot      BetLion_Virtual League 9 Bets_Bonus Not Max%.png
 
     ##Select an autostake
+    Log to Console      Select an autostake
     Sleep   1
     Unselect Frame
     Execute JavaScript    window.scrollTo(0,1000)
@@ -1027,6 +1060,7 @@ Select Fixtures with Auto Stake_V-African Nations
     Sleep   1
 
     # Select KSh200 AutoStake
+    Log to Console      Select KSh200 AutoStake
     # KSh Total Empty
     Page Should Contain Element         ${VLeagueBetslipInputValue0}
     # To Win / Stake Tax / Winnings Tax / Total Potential Return = 0
@@ -1047,6 +1081,7 @@ Select Fixtures with Auto Stake_V-African Nations
     Screenshot      BetLion_Virtual League To Win_Stake Tax_Winnings Tax_Total Potential Return_Calculated.png
 
     ##Click Bet Now
+    Log to Console      Click Bet Now
     Page Should Contain Element         ${VLeagueBetNow}
     Click Element                       ${VLeagueBetNow}
     Sleep   1
@@ -1066,11 +1101,13 @@ Select Fixtures with Auto Stake_V-African Nations
     Sleep   1
 
     # Stake and outcome displayed
+    Log to Console      Stake and outcome displayed
     SeleniumLibrary.Element Text Should Not Be          ${VLeagueBetsReceiptTotalOdds}          0.00
     SeleniumLibrary.Element Text Should Be              ${VLeagueBetsReceiptTotalStake}         KSh200.00
     SeleniumLibrary.Element Text Should Not Be          ${VLeagueBetsTotalPotentialReturn}      0.00
 
     ##Option to play more or view history
+    Log to Console      Option to play more or view history
     # Reuse Selections
     Page Should Contain Element         ${VLeagueBetsReuseSelections}
     Element Should Be Enabled           ${VLeagueBetsReuseSelections}
@@ -1083,6 +1120,7 @@ Select Fixtures with Auto Stake_V-African Nations
     Screenshot      BetLion_Virtual League Bet Placed_Odds Stakes Visible_Reuse Selections Back to Matches Buttons.png
 
     # Scroll to the top of the page
+    Log to Console      Scroll to the top of the page
     Sleep   1
     Unselect Frame
     Execute JavaScript    window.scrollTo(0,-400)
@@ -1109,10 +1147,28 @@ Select Fixtures with Auto Stake_V-African Nations
     Page Should Contain Element         ${VLeagueLive1stHalf}
 
     # V-La Liga Teams Visible on page
+    Log to Console      V-La Liga Teams Visible on page
     Wait Until Element Is Visible       ${VLeagueLiveVAfricanNationsSouthAfrica}           10 seconds
     Page Should Contain Element         ${VLeagueLiveVAfricanNationsSouthAfrica}
     Page Should Contain Element         ${VLeagueLiveVAfricanNationsCameroon}
 
+
+#*********************************************** SelectFixtureswithManualStake_V-World League *****************************
+Select Fixtures with Manual Stake_V-World League
+
+    Log to Console      V-League Header
+
+    # Virtual League Header
+    Unselect Frame
+    Wait Until Element Is Enabled       ${VLeagueHeader}                10 seconds
+    Click Element                       ${VLeagueHeader}
+    Sleep       1
+    Screenshot      BetLion_Virtual League Landing Page.png
+
+    Log to Console      Select Fixtures with Auto Stake_V-World League
+
+    Select Frame                        ${iFrame}
+    Sleep       1
 
 
 
